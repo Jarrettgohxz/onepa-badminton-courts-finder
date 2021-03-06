@@ -8,6 +8,10 @@ import os
 # SOME BUG TO FIX ==> Some venues not displayed or show more courts than it have
 # 
 
+# 
+# SOME SUGGESTIONS TO IMPROVE CODES ==> Add threading
+# 
+
 os.system('color')
 
 # DD-MM-YYYY
@@ -111,8 +115,13 @@ for key, value in venue_datas.venues.items():
                         colored(timings_list[slots] + status, text_color))
                     # print(timings_list[slots] + status)
 
-            if 'normal' not in courts_dict['slots_court' + str(int(slots_num + 1))]:
-                # print(colored('Fully Booked :(', 'yellow'))
-                print(colored('Fully Booked :(', 'red'))
+                # 'normal' not in courts_dict['slots_court' + str(int(slots_num + 1))]
+                elif courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'notAvailable' :
+                    # print(colored('Fully Booked :(', 'yellow'))
+                    print(colored('Not available! :(', 'white'))
+
+                else:
+                    print(colored('Fully booked! :(', 'red'))
+
 
         print('\n\n')

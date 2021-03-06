@@ -10,9 +10,6 @@
 # SOLVED THE PROBLEM'
 
 
-
-
-
 venues = {
 'ACE The Place CC':
 '4020CCMCPA-BM',
