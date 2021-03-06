@@ -31,13 +31,20 @@ for key, value in venue_datas.venues.items():
 
     # Gets time slots for each venue (Both booked and not booked)
     for time_slots in soup.find_all('div', attrs={'class': "slots"}):
-        if time_slots:  # Some courts won't return court data so need check first
+        if len(time_slots):  # Some courts won't return court data so need check first
             # Gets the text displayed, which in this case is the timing
             timings = time_slots.get_text()
             timings_list.append(timings)
 
         else:
             continue
+
+    if len(timings_list) == 0:
+        
+        print(colored('\n#### ' + str(venue_name) + ' ####', 'green'))
+        print('\n')
+        print(colored('Register over the counter.', 'red'))
+        print('\n\n')
 
 
     def find_tags():
@@ -107,12 +114,12 @@ for key, value in venue_datas.venues.items():
                     #  print('\n~~~~'+'Court '+str(int(slots_num+1))+' Available Timings'+'~~~~\n')
 
                 if courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'normal' or courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak':
-                    text_color = 'yellow' if (
-                            courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak') else 'green'
-                    status = ' Peak Period' if (
-                            courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak') else ' :)'
-                    print(
-                        colored(timings_list[slots] + status, text_color))
+
+                    text_color = 'yellow' if (courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak') else 'green'
+
+                    status = 'Peak Period' if (courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak') else ' :)'
+
+                    print(colored(timings_list[slots] + status, text_color))
                     # print(timings_list[slots] + status)
 
                 # 'normal' not in courts_dict['slots_court' + str(int(slots_num + 1))]
