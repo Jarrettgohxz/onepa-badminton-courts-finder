@@ -4,9 +4,6 @@ import courts_data as venue_datas
 from termcolor import colored
 import os
 
-# 
-# SOME BUG TO FIX ==> Some venues not displayed or show more courts than it have
-# 
 
 # 
 # SOME SUGGESTIONS TO IMPROVE CODES ==> Add threading
