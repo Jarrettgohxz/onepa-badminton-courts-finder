@@ -5,9 +5,9 @@ from termcolor import colored
 import os
 
 
-# 
+#
 # SOME SUGGESTIONS TO IMPROVE CODES ==> Add threading
-# 
+#
 
 os.system('color')
 
@@ -37,12 +37,11 @@ for key, value in venue_datas.venues.items():
             continue
 
     if len(timings_list) == 0:
-        
+
         print(colored('\n#### ' + str(venue_name) + ' ####', 'green'))
         print('\n')
         print(colored('Register over the counter.', 'red'))
         print('\n\n')
-
 
     def find_tags():
         slots_list = []
@@ -66,10 +65,8 @@ for key, value in venue_datas.venues.items():
 
         return slots_list
 
-
     # Returns slots_list which contains a long list of each availability
     slots_list = find_tags()
-
 
     # def main(slots_list, timings_list):
     if len(timings_list) > 0 and len(slots_list) > 0:
@@ -106,26 +103,27 @@ for key, value in venue_datas.venues.items():
             for slots in range(len(timings_list)):
                 if slots == 0:  # To only run this part of script in the first iteration
                     print(colored('\n~~~~', 'blue') + colored('Court ' + str(int(slots_num + 1)
-                    ) + ' Available Timings', 'cyan') + colored('~~~~\n', 'blue'))
+                                                                             ) + ' Available Timings', 'cyan') + colored('~~~~\n', 'blue'))
 
                     #  print('\n~~~~'+'Court '+str(int(slots_num+1))+' Available Timings'+'~~~~\n')
 
                 if courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'normal' or courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak':
 
-                    text_color = 'yellow' if (courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak') else 'green'
+                    text_color = 'yellow' if (
+                        courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak') else 'green'
 
-                    status = 'Peak Period' if (courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak') else ' :)'
+                    status = 'Peak Period' if (
+                        courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak') else ' :)'
 
                     print(colored(timings_list[slots] + status, text_color))
                     # print(timings_list[slots] + status)
 
                 # 'normal' not in courts_dict['slots_court' + str(int(slots_num + 1))]
-                elif courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'notAvailable' :
+                elif courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'notAvailable':
                     # print(colored('Fully Booked :(', 'yellow'))
                     print(colored('Not available! :(', 'white'))
 
                 else:
                     print(colored('Fully booked! :(', 'red'))
-
 
         print('\n\n')
