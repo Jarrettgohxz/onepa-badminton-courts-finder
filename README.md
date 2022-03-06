@@ -14,6 +14,10 @@ py onepa.py
 
 Input date format: DD-MM-YYYY
 
+# COMPATIBILITY NOTE
+- It seems that https://onepa.gov.sg has changed their website structure for the Badminton courts
+- Thus, this automation software may not as expected
+
 # FUTURE UPDATES
 - Summary of all the available courts at the end of scipt process 
 - To run script once to query over a period of dates (Eg. 1 week -- 7 Days)
