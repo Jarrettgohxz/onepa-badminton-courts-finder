@@ -1,0 +1,239 @@
+{
+  "response": {
+    "date": "20/10/2023",
+    "resourceList": [
+      {
+        "resourceId": "ce0588a1-4968-e611-80d9-00155dad210b",
+        "resourceName": "01",
+        "slotList": [
+          {
+            "timeRangeId": "37800",
+            "timeRangeName": "10:30 AM - 11:30 AM",
+            "startTime": "2023-10-20T10:30",
+            "endTime": "2023-10-20T11:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "41400",
+            "timeRangeName": "11:30 AM - 12:30 PM",
+            "startTime": "2023-10-20T11:30",
+            "endTime": "2023-10-20T12:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "45000",
+            "timeRangeName": "12:30 PM - 01:30 PM",
+            "startTime": "2023-10-20T12:30",
+            "endTime": "2023-10-20T13:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "48600",
+            "timeRangeName": "01:30 PM - 02:30 PM",
+            "startTime": "2023-10-20T13:30",
+            "endTime": "2023-10-20T14:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "52200",
+            "timeRangeName": "02:30 PM - 03:30 PM",
+            "startTime": "2023-10-20T14:30",
+            "endTime": "2023-10-20T15:30",
+            "availabilityStatus": "Available",
+            "isAvailable": true,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "55800",
+            "timeRangeName": "03:30 PM - 04:30 PM",
+            "startTime": "2023-10-20T15:30",
+            "endTime": "2023-10-20T16:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "59400",
+            "timeRangeName": "04:30 PM - 05:30 PM",
+            "startTime": "2023-10-20T16:30",
+            "endTime": "2023-10-20T17:30",
+            "availabilityStatus": "Available",
+            "isAvailable": true,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "63000",
+            "timeRangeName": "05:30 PM - 06:30 PM",
+            "startTime": "2023-10-20T17:30",
+            "endTime": "2023-10-20T18:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "66600",
+            "timeRangeName": "06:30 PM - 07:30 PM",
+            "startTime": "2023-10-20T18:30",
+            "endTime": "2023-10-20T19:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "70200",
+            "timeRangeName": "07:30 PM - 08:30 PM",
+            "startTime": "2023-10-20T19:30",
+            "endTime": "2023-10-20T20:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "73800",
+            "timeRangeName": "08:30 PM - 09:30 PM",
+            "startTime": "2023-10-20T20:30",
+            "endTime": "2023-10-20T21:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          }
+        ]
+      },
+      {
+        "resourceId": "d40588a1-4968-e611-80d9-00155dad210b",
+        "resourceName": "02",
+        "slotList": [
+          {
+            "timeRangeId": "37800",
+            "timeRangeName": "10:30 AM - 11:30 AM",
+            "startTime": "2023-10-20T10:30",
+            "endTime": "2023-10-20T11:30",
+            "availabilityStatus": "Available",
+            "isAvailable": true,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "41400",
+            "timeRangeName": "11:30 AM - 12:30 PM",
+            "startTime": "2023-10-20T11:30",
+            "endTime": "2023-10-20T12:30",
+            "availabilityStatus": "Available",
+            "isAvailable": true,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "45000",
+            "timeRangeName": "12:30 PM - 01:30 PM",
+            "startTime": "2023-10-20T12:30",
+            "endTime": "2023-10-20T13:30",
+            "availabilityStatus": "Available",
+            "isAvailable": true,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "48600",
+            "timeRangeName": "01:30 PM - 02:30 PM",
+            "startTime": "2023-10-20T13:30",
+            "endTime": "2023-10-20T14:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "52200",
+            "timeRangeName": "02:30 PM - 03:30 PM",
+            "startTime": "2023-10-20T14:30",
+            "endTime": "2023-10-20T15:30",
+            "availabilityStatus": "Available",
+            "isAvailable": true,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "55800",
+            "timeRangeName": "03:30 PM - 04:30 PM",
+            "startTime": "2023-10-20T15:30",
+            "endTime": "2023-10-20T16:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "59400",
+            "timeRangeName": "04:30 PM - 05:30 PM",
+            "startTime": "2023-10-20T16:30",
+            "endTime": "2023-10-20T17:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "63000",
+            "timeRangeName": "05:30 PM - 06:30 PM",
+            "startTime": "2023-10-20T17:30",
+            "endTime": "2023-10-20T18:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "66600",
+            "timeRangeName": "06:30 PM - 07:30 PM",
+            "startTime": "2023-10-20T18:30",
+            "endTime": "2023-10-20T19:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "70200",
+            "timeRangeName": "07:30 PM - 08:30 PM",
+            "startTime": "2023-10-20T19:30",
+            "endTime": "2023-10-20T20:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          },
+          {
+            "timeRangeId": "73800",
+            "timeRangeName": "08:30 PM - 09:30 PM",
+            "startTime": "2023-10-20T20:30",
+            "endTime": "2023-10-20T21:30",
+            "availabilityStatus": "Booked",
+            "isAvailable": false,
+            "isPeak": false
+          }
+        ]
+      }
+    ],
+    "pageSize": 50,
+    "pageIndex": 1,
+    "totalRecord": 2,
+    "outletName": null,
+    "outletDivison": "Canberra",
+    "outletType": "CCMC",
+    "smmInformation": null,
+    "selectedFacility": "canberracc_BADMINTONCOURTS",
+    "selectedDate": "20/10/2023",
+    "price": {
+      "peakMember": "$8.00/slot (Member)",
+      "peakNonMember": "$10.00/slot (Non Member)",
+      "nonPeakMember": "$8.00/slot (Member)",
+      "nonPeakNonMember": "$10.00/slot (Non Member)",
+      "peakMinPrice": 8.0,
+      "peakMaxPrice": 10.0,
+      "nonPeakMinPrice": 8.0,
+      "nonPeakMaxPrice": 10.0
+    }
+  },
+  "responseStatusCode": 200,
+  "hasError": false,
+  "errorMessages": null
+}
