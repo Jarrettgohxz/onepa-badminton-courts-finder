@@ -1,129 +1,123 @@
 import requests
-from bs4 import BeautifulSoup
-import courts_data as venue_datas
-from termcolor import colored
-import os
+import urllib.parse
+import json
+import re
 
 
-#
-# SOME SUGGESTIONS TO IMPROVE CODES ==> Add threading
-#
+class OnePA():
+    # get_courts_availability_url = "https://www.onepa.gov.sg/pacesapi/facilityavailability/GetFacilitySlots?selectedFacility=canberracc_BADMINTONCOURTS&selectedDate=20/10/2023"
 
-os.system('color')
+    #   "https://www.onepa.gov.sg/facilities/availability?facilityId=siglapcc_BADMINTONCOURTS&date=18/11/2023&time=all",
 
-# DD-MM-YYYY
-date = input('Enter Date: ')
+    def __init__(self):
+        self.s = requests.session()
 
-for key, value in venue_datas.venues.items():
-    venue_name = key
-    location_id = value
-    date = date
+        self.s.headers.update({
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36",
+            "Host": "www.onepa.gov.sg",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            # "Referer": "https://www.onepa.gov.sg/facilities"
+        })
 
-    url = "https://onepa.gov.sg/facilities/" + \
-          str(location_id) + '?date=' + str(date)
-    r = requests.get(url)
-    soup = BeautifulSoup(r.content, 'html.parser')
+    def set_cookies(self):
+        self.s.get("https://www.onepa.gov.sg")
 
-    timings_list = []
+    def get_venues_list(self):
+        # 1 to 10
+        page = 1
 
-    # Gets time slots for each venue (Both booked and not booked)
-    for time_slots in soup.find_all('div', attrs={'class': "slots"}):
-        if len(time_slots):  # Some courts won't return court data so need check first
-            # Gets the text displayed, which in this case is the timing
-            timings = time_slots.get_text()
-            timings_list.append(timings)
+        # r = self.s.get(
+        #     f'https://www.onepa.gov.sg/pacesapi/facilitysearch/searchjson?facility=BADMINTON%20COURTS&outlet=&date=&time=&page={page}&division=')
 
-        else:
-            continue
+        r = self.s.get(
+            'https://www.onepa.gov.sg/pacesapi/catalogs/outlets',
+            # 'https://www.onepa.gov.sg/pacesapi/FacilitySearch/GetFacilityOutlets',
+            headers={
+                'Content-Type': 'application/json;charset=utf-8',
+                "Accept": "application/json, text/plain, */*",
 
-    if len(timings_list) == 0:
+                # else won't work - empty response
+                'Referer': 'https://www.onepa.gov.sg/facilities/search?facility=BADMINTON%20COURTS'
+            })
 
-        print(colored('\n#### ' + str(venue_name) + ' ####', 'green'))
-        print('\n')
-        print(colored('Register over the counter.', 'red'))
-        print('\n\n')
+        # outlets = json.loads(r.text)['data']['data']['outlets']
 
-    def find_tags():
-        slots_list = []
+        # index = 0
 
-        for tag in soup.find_all('span'):
-            if tag.get('class') is None:
+        # for outlet in outlets:
+        #     for i in outlet['ccList']:
+        #         label = i['label']
+
+        #         if 'rc' in label.lower() or 'rn' in label.lower():
+        #             continue
+
+        #         print(i['label'])
+
+        #         index += 1
+        #         print(index)
+
+        outlets = json.loads(r.text)['data']['outlets']
+
+        index = 0
+
+        for outlet in outlets:
+            title = outlet['title']
+
+            if outlet['type'] != 'CC':
                 continue
 
-            else:
-                # The tag.get('class') returns a list where if its a timing slot it will be ['slots', 'availability status']
-                if tag.get('class')[0] == 'slots':
-                    slots = tag.get('class')
-                    # slots[1] returns the availability status
-                    slots_list.append(slots[1])
+            if re.search('cc$', title.lower(), re.IGNORECASE) == None:
+                continue
 
-                #   print(slots_list)  #Uncomment this to show some cool thing
-                # Basically just a list which adds on to each other each row
+            if 'defunct' in title.lower():
+                continue
 
-                else:
-                    continue
+            print(outlet['title'])
+            index += 1
+            print(index)
 
-        return slots_list
+        with open('venues2.json', 'w', encoding='utf-8') as v:
+            v.write(r.text)
 
-    # Returns slots_list which contains a long list of each availability
-    slots_list = find_tags()
+    def get_courts_availability(self):
 
-    # def main(slots_list, timings_list):
-    if len(timings_list) > 0 and len(slots_list) > 0:
-        number_of_courts = len(slots_list) / len(timings_list)
-        number_of_courts_int = int(number_of_courts)
+        facility = urllib.parse.quote('BADMINTON COURTS')
+        date = '23/11/2023'
+        outlet = urllib.parse.quote(
+            'CANBERRA CC,YEW TEE CC,YUHUA CC, BIDADARI CC, ZHENGHUA CC')
 
-        # Dynamically create the empty 'slots_court' list contained in a dictionary
-        courts_dict = {
-            'slots_court' + str(int(court + 1)): [] for court in range(number_of_courts_int)}
+        get_courts_list_api = f'https://www.onepa.gov.sg/pacesapi/facilitysearch/searchjson?facility={
+            facility}&outlet={outlet}&date={date}&time=all&page=1&division='
 
-        # Margin of court index to increase from one court to another
-        court_index_margin = int(len(slots_list) / number_of_courts_int)
+        res = self.s.get(
+            get_courts_list_api,
+            headers={
+                "Accept": "application/json, text/plain, */*",
+                # "Referer": "https://www.onepa.gov.sg/facilities",
+            }
+        )
 
-        # Specify the starting court index in a dictionary to be able to find which availability corresponds to which court
-        initial_court_index = {'court' + str(int(court + 1)): int(
-            court_index_margin * court) for court in range(number_of_courts_int)}
+        with open("data.json", "w", encoding="utf-8") as test:
+            test.write(res.text)
 
-        # Add availability in the 'courts_dict' dictionary into the respective courts
-        # Basically sorting the courts availability into the individual courts
-        for num_courts in range(number_of_courts_int):  # Loop for each court
-            # Loop for each timings in each court
-            for slots_index in range(court_index_margin):
-                # Iterate through each court in the courts_dict dictionary and append the respective availabilities to each court with the correct index
-                # of slots_list list specified with the initial_court_index which gives the margin to tell which starting point to take start as the first index.
-                courts_dict['slots_court' + str(int(num_courts + 1))].append(
-                    slots_list[slots_index + initial_court_index['court' + str(int(num_courts + 1))]])
+    def remove_first_few_elements(self, arr, chunk):
+        values = arr[:chunk]
+        del arr[:chunk]
 
-        print(colored('\n#### ' + str(venue_name) + ' ####', 'green'))
-        # print('\n####'+ str(venue_name) + '####')
+        return values
 
-        # Loop through each court
-        for slots_num in range(number_of_courts_int):
-            # Loop through each slots in the court
-            for slots in range(len(timings_list)):
-                if slots == 0:  # To only run this part of script in the first iteration
-                    print(colored('\n~~~~', 'blue') + colored('Court ' + str(int(slots_num + 1)
-                                                                             ) + ' Available Timings', 'cyan') + colored('~~~~\n', 'blue'))
+    def test_algo(self):
+        arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        chunk = 5
 
-                    #  print('\n~~~~'+'Court '+str(int(slots_num+1))+' Available Timings'+'~~~~\n')
+        while len(arr) != 0 and (values := self.remove_first_few_elements(arr, chunk)):
+            print(values)
 
-                if courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'normal' or courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak':
 
-                    text_color = 'yellow' if (
-                        courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak') else 'green'
+if __name__ == "__main__":
+    onepa = OnePA()
 
-                    status = 'Peak Period' if (
-                        courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'peak') else ' :)'
-
-                    print(colored(timings_list[slots] + status, text_color))
-                    # print(timings_list[slots] + status)
-
-                # 'normal' not in courts_dict['slots_court' + str(int(slots_num + 1))]
-                elif courts_dict['slots_court' + str(int(slots_num + 1))][slots] == 'notAvailable':
-                    # print(colored('Fully Booked :(', 'yellow'))
-                    print(colored('Not available! :(', 'white'))
-
-                else:
-                    print(colored('Fully booked! :(', 'red'))
-
-        print('\n\n')
+    # onepa.set_cookies()
+    # onepa.test_algo()
+    onepa.get_venues_list()
+    # onepa.get_courts_availability()

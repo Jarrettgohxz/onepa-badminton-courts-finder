@@ -1,239 +1,110 @@
 {
-  "response": {
-    "date": "20/10/2023",
-    "resourceList": [
+  "success": false,
+  "message": null,
+  "data": {
+    "results": [
       {
-        "resourceId": "ce0588a1-4968-e611-80d9-00155dad210b",
-        "resourceName": "01",
-        "slotList": [
-          {
-            "timeRangeId": "37800",
-            "timeRangeName": "10:30 AM - 11:30 AM",
-            "startTime": "2023-10-20T10:30",
-            "endTime": "2023-10-20T11:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "41400",
-            "timeRangeName": "11:30 AM - 12:30 PM",
-            "startTime": "2023-10-20T11:30",
-            "endTime": "2023-10-20T12:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "45000",
-            "timeRangeName": "12:30 PM - 01:30 PM",
-            "startTime": "2023-10-20T12:30",
-            "endTime": "2023-10-20T13:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "48600",
-            "timeRangeName": "01:30 PM - 02:30 PM",
-            "startTime": "2023-10-20T13:30",
-            "endTime": "2023-10-20T14:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "52200",
-            "timeRangeName": "02:30 PM - 03:30 PM",
-            "startTime": "2023-10-20T14:30",
-            "endTime": "2023-10-20T15:30",
-            "availabilityStatus": "Available",
-            "isAvailable": true,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "55800",
-            "timeRangeName": "03:30 PM - 04:30 PM",
-            "startTime": "2023-10-20T15:30",
-            "endTime": "2023-10-20T16:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "59400",
-            "timeRangeName": "04:30 PM - 05:30 PM",
-            "startTime": "2023-10-20T16:30",
-            "endTime": "2023-10-20T17:30",
-            "availabilityStatus": "Available",
-            "isAvailable": true,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "63000",
-            "timeRangeName": "05:30 PM - 06:30 PM",
-            "startTime": "2023-10-20T17:30",
-            "endTime": "2023-10-20T18:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "66600",
-            "timeRangeName": "06:30 PM - 07:30 PM",
-            "startTime": "2023-10-20T18:30",
-            "endTime": "2023-10-20T19:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "70200",
-            "timeRangeName": "07:30 PM - 08:30 PM",
-            "startTime": "2023-10-20T19:30",
-            "endTime": "2023-10-20T20:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "73800",
-            "timeRangeName": "08:30 PM - 09:30 PM",
-            "startTime": "2023-10-20T20:30",
-            "endTime": "2023-10-20T21:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          }
-        ]
+        "name": "canberracc_badmintoncourts",
+        "type": "Facility",
+        "image": null,
+        "outlet": "Canberra CC",
+        "outletId": "canberracc",
+        "outletUrl": "/cc/canberra-cc",
+        "title": "BADMINTON COURTS",
+        "facilityCounts": "2 Courts",
+        "favorite": false,
+        "price": {
+          "discount": true,
+          "publicPrice": "$10.00/slot",
+          "membersPrice": "$8.00/slot",
+          "minPrice": 0.0,
+          "maxPrice": 0.0,
+          "discountTitle": "MyPassion Discount"
+        },
+        "favoriteID": "canberracc_badmintoncourts",
+        "resourceType": "BADMINTON COURTS",
+        "count": 2,
+        "productId": "canberracc_badmintoncourts",
+        "productUrl": "/facilities/availability?facilityId=CanberraCC_BADMINTONCOURTS",
+        "minPrice": 8.0,
+        "maxPrice": 10.0,
+        "isCategory": false,
+        "allPrices": null,
+        "materialFees": null
       },
       {
-        "resourceId": "d40588a1-4968-e611-80d9-00155dad210b",
-        "resourceName": "02",
-        "slotList": [
-          {
-            "timeRangeId": "37800",
-            "timeRangeName": "10:30 AM - 11:30 AM",
-            "startTime": "2023-10-20T10:30",
-            "endTime": "2023-10-20T11:30",
-            "availabilityStatus": "Available",
-            "isAvailable": true,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "41400",
-            "timeRangeName": "11:30 AM - 12:30 PM",
-            "startTime": "2023-10-20T11:30",
-            "endTime": "2023-10-20T12:30",
-            "availabilityStatus": "Available",
-            "isAvailable": true,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "45000",
-            "timeRangeName": "12:30 PM - 01:30 PM",
-            "startTime": "2023-10-20T12:30",
-            "endTime": "2023-10-20T13:30",
-            "availabilityStatus": "Available",
-            "isAvailable": true,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "48600",
-            "timeRangeName": "01:30 PM - 02:30 PM",
-            "startTime": "2023-10-20T13:30",
-            "endTime": "2023-10-20T14:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "52200",
-            "timeRangeName": "02:30 PM - 03:30 PM",
-            "startTime": "2023-10-20T14:30",
-            "endTime": "2023-10-20T15:30",
-            "availabilityStatus": "Available",
-            "isAvailable": true,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "55800",
-            "timeRangeName": "03:30 PM - 04:30 PM",
-            "startTime": "2023-10-20T15:30",
-            "endTime": "2023-10-20T16:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "59400",
-            "timeRangeName": "04:30 PM - 05:30 PM",
-            "startTime": "2023-10-20T16:30",
-            "endTime": "2023-10-20T17:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "63000",
-            "timeRangeName": "05:30 PM - 06:30 PM",
-            "startTime": "2023-10-20T17:30",
-            "endTime": "2023-10-20T18:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "66600",
-            "timeRangeName": "06:30 PM - 07:30 PM",
-            "startTime": "2023-10-20T18:30",
-            "endTime": "2023-10-20T19:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "70200",
-            "timeRangeName": "07:30 PM - 08:30 PM",
-            "startTime": "2023-10-20T19:30",
-            "endTime": "2023-10-20T20:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          },
-          {
-            "timeRangeId": "73800",
-            "timeRangeName": "08:30 PM - 09:30 PM",
-            "startTime": "2023-10-20T20:30",
-            "endTime": "2023-10-20T21:30",
-            "availabilityStatus": "Booked",
-            "isAvailable": false,
-            "isPeak": false
-          }
-        ]
+        "name": "yewteecc_badmintoncourts",
+        "type": "Facility",
+        "image": null,
+        "outlet": "Yew Tee CC",
+        "outletId": "yewteecc",
+        "outletUrl": "/cc/yew-tee-cc",
+        "title": "BADMINTON COURTS",
+        "facilityCounts": "2 Courts",
+        "favorite": false,
+        "price": {
+          "discount": true,
+          "publicPrice": "$8.00/slot",
+          "membersPrice": "$6.00/slot",
+          "minPrice": 0.0,
+          "maxPrice": 0.0,
+          "discountTitle": "MyPassion Discount"
+        },
+        "favoriteID": "yewteecc_badmintoncourts",
+        "resourceType": "BADMINTON COURTS",
+        "count": 2,
+        "productId": "yewteecc_badmintoncourts",
+        "productUrl": "/facilities/availability?facilityId=YewTeeCC_BADMINTONCOURTS",
+        "minPrice": 4.0,
+        "maxPrice": 8.0,
+        "isCategory": false,
+        "allPrices": null,
+        "materialFees": null
+      },
+      {
+        "name": "bidadaricc_badmintoncourts",
+        "type": "Facility",
+        "image": null,
+        "outlet": "Bidadari CC",
+        "outletId": "bidadaricc",
+        "outletUrl": "/cc/bidadari-cc",
+        "title": "BADMINTON COURTS",
+        "facilityCounts": "1 Court",
+        "favorite": false,
+        "price": {
+          "discount": true,
+          "publicPrice": "$15.00/slot",
+          "membersPrice": "$14.00/slot",
+          "minPrice": 0.0,
+          "maxPrice": 0.0,
+          "discountTitle": "MyPassion Discount"
+        },
+        "favoriteID": "bidadaricc_badmintoncourts",
+        "resourceType": "BADMINTON COURTS",
+        "count": 1,
+        "productId": "bidadaricc_badmintoncourts",
+        "productUrl": "/facilities/availability?facilityId=BidadariCC_BADMINTONCOURTS",
+        "minPrice": 8.0,
+        "maxPrice": 15.0,
+        "isCategory": false,
+        "allPrices": null,
+        "materialFees": null
       }
     ],
-    "pageSize": 50,
-    "pageIndex": 1,
-    "totalRecord": 2,
-    "outletName": null,
-    "outletDivison": "Canberra",
-    "outletType": "CCMC",
-    "smmInformation": null,
-    "selectedFacility": "canberracc_BADMINTONCOURTS",
-    "selectedDate": "20/10/2023",
-    "price": {
-      "peakMember": "$8.00/slot (Member)",
-      "peakNonMember": "$10.00/slot (Non Member)",
-      "nonPeakMember": "$8.00/slot (Member)",
-      "nonPeakNonMember": "$10.00/slot (Non Member)",
-      "peakMinPrice": 8.0,
-      "peakMaxPrice": 10.0,
-      "nonPeakMinPrice": 8.0,
-      "nonPeakMaxPrice": 10.0
-    }
-  },
-  "responseStatusCode": 200,
-  "hasError": false,
-  "errorMessages": null
+    "actions": null,
+    "slots": null,
+    "errorMsg": null,
+    "labels": null,
+    "categories": null,
+    "outlets": null,
+    "categoryList": null,
+    "date": "2023-11-23T00:00:00",
+    "facilityTimeSetting": { "dayRange": 0, "showNextDayFlag": false },
+    "page": 1,
+    "totalResults": 3,
+    "message": "",
+    "query": "BADMINTON COURTS",
+    "category": "Facility",
+    "map": null
+  }
 }
