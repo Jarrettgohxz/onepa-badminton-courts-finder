@@ -1,0 +1,23 @@
+********************
+NOTE: If certain API doesn't work, check the following
+1. The `referer` header is set
+2. content-type and accept headers
+3. cookie is set by requests session - by sending GET requests to the main onepa.gov.sg or relevant urls (https://www.onepa.gov.sg/facilities/search?facility=BADMINTON%20COURT)
+********************
+
+
+1. Retrieve a list of CC outlets: 
+https://www.onepa.gov.sg/pacesapi/facilitysearch/searchjson?facility=BADMINTON%20COURTS&outlet=&date=&time=&page={page}&division=
+-> where `page` would be an int from 1 to about 10
+-> the `totalResults` field would contain the total number of results - to call this api at the start of the script and check this value with the value in the main .json file (previously loaded from the script call)
+
+2. If the `totalResults` value has changed: Retrieve the lat, lng detail for the new outlet:
+https://www.onepa.gov.sg/pacesapi/catalogs/outlets
+
+
+3. Create and load a .json file with the detail of the location (lat, lng) facilityid, etc. for each outlet
+
+4. Iterate through each outlet in the main .json file and call the api to retrieve court listing detail:
+https://www.onepa.gov.sg/pacesapi/facilityavailability/GetFacilitySlots?selectedFacility=<facilityid>_BADMINTONCOURTS&selectedDate=
+
+-> `facilityid` would be defined in the main .json file
