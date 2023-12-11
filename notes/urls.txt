@@ -1,0 +1,57 @@
+1. https://www.onepa.gov.sg/pacesapi/FacilitySearch/GetFacilityOutlets
+>> get all the facility with neighbourhood congregation and the cc id along with whether or not cc has badminton courts - from the `productList` key - iterate through until "_BADMINTONCOURTS" is found (might not be the most effective way)
+
+
+```
+   "data": {
+      "outlets": [
+        {
+          "neighbourhood": "Ang Mo Kio",
+          "ccList": [
+            {
+              "id": "angmokiocc",
+              "label": "Ang Mo Kio CC",
+              "lat": 1.3668622043,
+              "lng": 103.8406847685,
+              "itemName": null,
+              "categories": null,
+              "productList": [
+                {
+                  "id": "AngMoKioCC_ACTIVITYGROUPROOM",
+                  "value": "ACTIVITY GROUP ROOM"
+                },
+                {
+                  "id": "AngMoKioCC_BASKETBALLCOURT",
+                  "value": "BASKETBALL COURT"
+                },
+                {
+                  "id": "AngMoKioCC_CONFERENCEROOM",
+                  "value": "CONFERENCE ROOM"
+                }
+              ]
+            },
+            {
+              "id": "kebunbarucc",
+              "label": "Kebun Baru CC",
+              "lat": 1.3730075016,
+              "lng": 103.8376124213,
+              "itemName": null,
+              "categories": null,
+              "productList": [
+                {
+                  "id": "KebunBaruCC_BADMINTONCOURTS",
+                  "value": "BADMINTON COURTS"
+                },
+                {
+                  "id": "KebunBaruCC_CONFERENCEROOM",
+                  "value": "CONFERENCE ROOM"
+                }
+              ]
+            },
+            ....
+```
+
+
+2. https://www.onepa.gov.sg/pacesapi/facilityavailability/GetFacilitySlots?selectedFacility=TeckGheeCC_BADMINTONCOURTS&selectedDate=12/12/2023
+
+>> get info about slots list and the resourceId/facilityId (to be used in api call to book facility)
