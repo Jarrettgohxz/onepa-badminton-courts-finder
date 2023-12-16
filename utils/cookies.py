@@ -1,3 +1,4 @@
+from requests import utils as requests_utils
 
 from typing import List
 from http.cookiejar import Cookie, CookieJar
@@ -13,6 +14,21 @@ def get_cookie_str(cookiejar: CookieJar):
             cookie_dict['name']}={cookie_dict['value']}'
 
     return cookie_str
+
+
+def get_requests_cookiejar(cookiejar: CookieJar):
+    cookies_dict = {}
+
+    for c in cookiejar:
+        cookie_dict = c.__dict__
+        name = cookie_dict['name']
+        value = cookie_dict['value']
+
+        cookies_dict[name] = value
+
+    cookiejar = requests_utils.cookiejar_from_dict(cookies_dict)
+
+    return cookiejar
 
 
 def update_cookiejar(current_cookiejar: CookieJar, cookies: List[dict]):

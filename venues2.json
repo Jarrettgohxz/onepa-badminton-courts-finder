@@ -1,4 +1,5 @@
 {
+  // https://www.onepa.gov.sg/pacesapi/catalogs/outlets GET request with cookies?
   "success": true,
   "message": "",
   "data": {

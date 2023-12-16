@@ -6,18 +6,77 @@ NOTE: If certain API doesn't work, check the following
 ********************
 
 
-1. Retrieve a list of CC outlets: 
+=============== SETUP (To prepare locally cached data) =============================
+1. Retrieve a list of CC outlets with badminton courts: 
 https://www.onepa.gov.sg/pacesapi/facilitysearch/searchjson?facility=BADMINTON%20COURTS&outlet=&date=&time=&page={page}&division=
--> where `page` would be an int from 1 to about 10
--> the `totalResults` field would contain the total number of results - to call this api at the start of the script and check this value with the value in the main .json file (previously loaded from the script call)
+>> increment the page query value (from approximately 1-10)
+>> parse the data and iterate through each outlet and do the following for each outlet; to still store in local cache regardless of whether or not the court is available for booking:
+1. extract `totalResults` value from response json 
+2. parse the `count` and `outletId` field
+3. Store the above mentioned into a local .json file:
+4. Call the api: https://www.onepa.gov.sg/pacesapi/catalogs/outlets and query for the particular outled by id and retrieve lat, lng information
 
-2. If the `totalResults` value has changed: Retrieve the lat, lng detail for the new outlet:
-https://www.onepa.gov.sg/pacesapi/catalogs/outlets
+```
+{
+ "outlets": 
+ [
+  {
+      "id": "angmokiocc",
+      "label": "Ang Mo Kio CC",
+      "courts_count": int,
+      "lat": 1.3668622043,
+      "lng": 103.8406847685,
+  },
+  {
+   ...
+  }
+ ],
+ "total_outlets_count": int
+}
+
+```
+
+==================================================
 
 
-3. Create and load a .json file with the detail of the location (lat, lng) facilityid, etc. for each outlet
 
-4. Iterate through each outlet in the main .json file and call the api to retrieve court listing detail:
-https://www.onepa.gov.sg/pacesapi/facilityavailability/GetFacilitySlots?selectedFacility=<facilityid>_BADMINTONCOURTS&selectedDate=
+****** MAIN WORKFLOW ***************
+1. If `update_facilities_from_server` is set to True enabled in options (as with config.json file):
+>> query the api https://www.onepa.gov.sg/pacesapi/facilitysearch/searchjson?facility=BADMINTON%20COURTS&outlet=&date=&time=&page={page}&division= (same as the setup api)
+#1 however, instead of parsing the outlet values, retrieve the `totalResults` value only 
+#2 compare the ``totalResults` with the value stored in the local .json file
+-> if the value is same, exit
+-> if value is different, repeat setup steps
 
--> `facilityid` would be defined in the main .json file
+
+2. Iterate through each outlet as stored in the local .json file, and do the following for each:
+
+#1 Call the api: https://www.onepa.gov.sg/pacesapi/facilityavailability/GetFacilitySlots?selectedFacility=<facilityid>_BADMINTONCOURTS&selectedDate=, response json will be as follows:
+```
+{
+ "response": {
+  "date": null,        
+  "resourceList": null | [],
+  "pageSize": 0,       
+  "pageIndex": 0,
+  "totalRecord": 0,
+  "outletName": null,
+  "outletDivison": null,
+  "outletType": null,
+  "smmInformation": null,
+  "selectedFacility": null,
+  "selectedDate": null,
+  "price": null
+ },
+ "responseStatusCode": 0,
+ "hasError": false,
+ "errorMessages": null
+}
+```
+- read the `responseStatusCode` field: 200 indicates success, otherwise fail (eg. 0)
+- a non 200 response code indicates that there is no badminton court available; continue 
+
+
+- if success, parse the `resourceList` value 
+
+

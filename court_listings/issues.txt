@@ -1,0 +1,10 @@
+--- ISSUE ---
+>> receiving error: <html style="height:100%"><head><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"><meta name="format-detection" content="telephone=no"><meta name="viewport" content="initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></head><body style="margin:0px;height:100%"><iframe id="main-iframe" src="/_Incapsula_Resource?SWUDNSAI=31&xinfo=9-43804685-0%200NNN%20RT%281702552744643%2043365%29%20q%280%20-1%20-1%20-1%29%20r%280%20-1%29%20B12%2811%2c1873154%2c0%29%20U18&incident_id=963001220362765961-233068062532902537&edet=12&cinfo=0b000000&rpinfo=0&cts=OMnQSGE%2fi1poAtsTok8Ny0dQVZmGgNjl9Z1QIqWgMSW3v9A0t9UBHs846G9X9Rh7&mth=GET" frameborder=0 width="100%" height="100%" marginheight="0px" marginwidth="0px">Request unsuccessful. Incapsula incident ID: 963001220362765961-233068062532902537</iframe></body></html>
+
+with status code 200
+
+
+** Possible reasons
+1. Request being sent too quickly
+2. Referer header not changing
+3. Cookie always the same - does not update according to referer header 

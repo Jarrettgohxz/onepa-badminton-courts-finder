@@ -1,0 +1,3 @@
+1. https://copyprogramming.com/howto/python-python-requests-upload-file-form-code-example#recreate-post-request-with-webkitformboundary-using-pythons-requests
+
+(webkitformboundary)

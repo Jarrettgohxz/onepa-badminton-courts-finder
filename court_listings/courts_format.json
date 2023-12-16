@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "date": null,
+      "available_courts": [
+        {
+          "id": null,
+          "resources": [
+            {
+              "court_number": null,
+              "slots": [
+                {
+                  "time_range": null,
+                  "is_peak": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

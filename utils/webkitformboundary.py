@@ -10,6 +10,8 @@ def generate_webkitformboundary(fields: List[dict]):
 
     content_type = f'multipart/form-data; boundary={boundary}'
 
+    boundary = '--' + boundary  # for the data
+
     data = ''
 
     for field in fields:
@@ -21,7 +23,7 @@ def generate_webkitformboundary(fields: List[dict]):
                  f'{boundary}\nContent-Disposition: form-data; name="{name}"\n\n{value}')
 
     if data != '':
-        data += f'\n{boundary}'
+        data += f'\n{boundary}--'
 
     return {
         'data': data,

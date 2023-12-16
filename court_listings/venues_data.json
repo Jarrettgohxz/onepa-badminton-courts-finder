@@ -1,0 +1,600 @@
+{
+  "outlets": [
+    {
+      "id": "woodlandscc",
+      "courts_count": 1,
+      "label": "Woodlands CC",
+      "lat": 1.4397303487,
+      "lng": 103.7882354031
+    },
+    {
+      "id": "marsilingcc",
+      "courts_count": 0,
+      "label": "Marsiling CC",
+      "lat": 1.4408633725,
+      "lng": 103.7737862182
+    },
+    {
+      "id": "yiochukangcc",
+      "courts_count": 0,
+      "label": "Yio Chu Kang CC",
+      "lat": 1.3815172764,
+      "lng": 103.841428115
+    },
+    {
+      "id": "tampineseastcc",
+      "courts_count": 0,
+      "label": "Tampines East CC",
+      "lat": 1.3532930611,
+      "lng": 103.9546239078
+    },
+    {
+      "id": "tampinesnorthcc",
+      "courts_count": 1,
+      "label": "Tampines North CC",
+      "lat": 1.3572781666,
+      "lng": 103.9466206954
+    },
+    {
+      "id": "zhenghuacc",
+      "courts_count": 0,
+      "label": "Zhenghua CC",
+      "lat": 1.3868890014,
+      "lng": 103.771719585
+    },
+    {
+      "id": "bidadaricc",
+      "courts_count": 1,
+      "label": "Bidadari CC",
+      "lat": 0.0,
+      "lng": 0.0
+    },
+    {
+      "id": "bedokcc",
+      "courts_count": 2,
+      "label": "Bedok CC",
+      "lat": 1.3243060451,
+      "lng": 103.9358641146
+    },
+    {
+      "id": "acetheplacecc",
+      "courts_count": 2,
+      "label": "Ace The Place CC",
+      "lat": 1.4271439633,
+      "lng": 103.7922880063
+    },
+    {
+      "id": "anchorvalecc",
+      "courts_count": 2,
+      "label": "Anchorvale CC",
+      "lat": 1.3970832979,
+      "lng": 103.8866942405
+    },
+    {
+      "id": "ayerrajahcc",
+      "courts_count": 3,
+      "label": "Ayer Rajah CC",
+      "lat": 1.3210509944,
+      "lng": 103.7473907236
+    },
+    {
+      "id": "bishancc",
+      "courts_count": 3,
+      "label": "Bishan CC",
+      "lat": 1.3497687998,
+      "lng": 103.8507501427
+    },
+    {
+      "id": "boonlaycc",
+      "courts_count": 2,
+      "label": "Boon Lay CC",
+      "lat": 1.3483232321,
+      "lng": 103.7113801775
+    },
+    {
+      "id": "braddellheightscc",
+      "courts_count": 1,
+      "label": "Braddell Heights CC",
+      "lat": 1.3518886416,
+      "lng": 103.8705150734
+    },
+    {
+      "id": "bukitbatokcc",
+      "courts_count": 2,
+      "label": "Bukit Batok CC",
+      "lat": 1.3504592976,
+      "lng": 103.7472778694
+    },
+    {
+      "id": "bukitpanjangcc",
+      "courts_count": 1,
+      "label": "Bukit Panjang CC",
+      "lat": 1.3764121854,
+      "lng": 103.7710009282
+    },
+    {
+      "id": "bukittimahcc",
+      "courts_count": 1,
+      "label": "Bukit Timah CC",
+      "lat": 1.3405868985,
+      "lng": 103.7718183804
+    },
+    {
+      "id": "buonavistacc",
+      "courts_count": 2,
+      "label": "Buona Vista CC",
+      "lat": 1.3091830331,
+      "lng": 103.7926404803
+    },
+    {
+      "id": "cairnhillcc",
+      "courts_count": 2,
+      "label": "Cairnhill CC",
+      "lat": 1.3103876746,
+      "lng": 103.8388827078
+    },
+    {
+      "id": "canberracc",
+      "courts_count": 2,
+      "label": "Canberra CC",
+      "lat": 1.445044137,
+      "lng": 103.8194737311
+    },
+    {
+      "id": "bukitpanjangcc",
+      "courts_count": 1,
+      "label": "Bukit Panjang CC",
+      "lat": 1.3764121854,
+      "lng": 103.7710009282
+    },
+    {
+      "id": "bukittimahcc",
+      "courts_count": 1,
+      "label": "Bukit Timah CC",
+      "lat": 1.3405868985,
+      "lng": 103.7718183804
+    },
+    {
+      "id": "buonavistacc",
+      "courts_count": 2,
+      "label": "Buona Vista CC",
+      "lat": 1.3091830331,
+      "lng": 103.7926404803
+    },
+    {
+      "id": "cairnhillcc",
+      "courts_count": 2,
+      "label": "Cairnhill CC",
+      "lat": 1.3103876746,
+      "lng": 103.8388827078
+    },
+    {
+      "id": "canberracc",
+      "courts_count": 2,
+      "label": "Canberra CC",
+      "lat": 1.445044137,
+      "lng": 103.8194737311
+    },
+    {
+      "id": "changisimeicc",
+      "courts_count": 2,
+      "label": "Changi Simei CC",
+      "lat": 1.3449655147,
+      "lng": 103.9551678077
+    },
+    {
+      "id": "chuachukangcc",
+      "courts_count": 3,
+      "label": "Chua Chu Kang CC",
+      "lat": 1.3811542065,
+      "lng": 103.7519071693
+    },
+    {
+      "id": "fengshancc",
+      "courts_count": 2,
+      "label": "Fengshan CC",
+      "lat": 1.3303814661,
+      "lng": 103.9400884011
+    },
+    {
+      "id": "fernvalecc",
+      "courts_count": 3,
+      "label": "Fernvale CC",
+      "lat": 0.0,
+      "lng": 0.0
+    },
+    {
+      "id": "gekpohvillecc",
+      "courts_count": 2,
+      "label": "Gek Poh Ville CC",
+      "lat": 1.3487228272,
+      "lng": 103.6988219709
+    },
+    {
+      "id": "geylangseraicc",
+      "courts_count": 3,
+      "label": "Geylang Serai CC",
+      "lat": 1.3164941574,
+      "lng": 103.8967884183
+    },
+    {
+      "id": "hendersoncc",
+      "courts_count": 2,
+      "label": "Henderson CC",
+      "lat": 1.2856119449,
+      "lng": 103.8233175549
+    },
+    {
+      "id": "hillviewcc",
+      "courts_count": 2,
+      "label": "Hillview CC",
+      "lat": 1.3619672534,
+      "lng": 103.7642663821
+    },
+    {
+      "id": "hongkahnorthcc",
+      "courts_count": 1,
+      "label": "Hong Kah North CC",
+      "lat": 1.3588537018,
+      "lng": 103.7491776958
+    },
+    {
+      "id": "jalanbesarcc",
+      "courts_count": 2,
+      "label": "Jalan Besar CC",
+      "lat": 1.3077644091,
+      "lng": 103.8617276684
+    },
+    {
+      "id": "joochiatcc",
+      "courts_count": 2,
+      "label": "Joo Chiat CC",
+      "lat": 1.3075691773,
+      "lng": 103.904067734
+    },
+    {
+      "id": "juronggreencc",
+      "courts_count": 1,
+      "label": "Jurong Green CC",
+      "lat": 1.3506086825,
+      "lng": 103.7253867213
+    },
+    {
+      "id": "jurongspringcc",
+      "courts_count": 1,
+      "label": "Jurong Spring CC",
+      "lat": 1.3483301683,
+      "lng": 103.7181504471
+    },
+    {
+      "id": "kakibukitcc",
+      "courts_count": 2,
+      "label": "Kaki Bukit CC",
+      "lat": 1.3333944893,
+      "lng": 103.9272150548
+    },
+    {
+      "id": "kallangcc",
+      "courts_count": 2,
+      "label": "Kallang CC",
+      "lat": 1.3178029103,
+      "lng": 103.8623732799
+    },
+    {
+      "id": "kimsengcc",
+      "courts_count": 2,
+      "label": "Kim Seng CC",
+      "lat": 1.2895091974,
+      "lng": 103.8306523075
+    },
+    {
+      "id": "kolamayercc",
+      "courts_count": 1,
+      "label": "Kolam Ayer CC",
+      "lat": 1.3242118922,
+      "lng": 103.8697334698
+    },
+    {
+      "id": "kretaayercc",
+      "courts_count": 2,
+      "label": "Kreta Ayer CC",
+      "lat": 1.2812078852,
+      "lng": 103.8430205291
+    },
+    {
+      "id": "lengkeecc",
+      "courts_count": 1,
+      "label": "Leng Kee CC",
+      "lat": 1.2897299955,
+      "lng": 103.8142991441
+    },
+    {
+      "id": "macphersoncc",
+      "courts_count": 2,
+      "label": "Macpherson CC",
+      "lat": 1.3235875356,
+      "lng": 103.8844586161
+    },
+    {
+      "id": "nanyangcc",
+      "courts_count": 1,
+      "label": "Nanyang CC",
+      "lat": 1.3426351832,
+      "lng": 103.6923013794
+    },
+    {
+      "id": "neesooneastcc",
+      "courts_count": 3,
+      "label": "Nee Soon East CC",
+      "lat": 1.4307710551,
+      "lng": 103.8385982236
+    },
+    {
+      "id": "ourtampineshub",
+      "courts_count": 5,
+      "label": "Our Tampines Hub",
+      "lat": 1.3531335742,
+      "lng": 103.9404082138
+    },
+    {
+      "id": "pasirriseastcc",
+      "courts_count": 3,
+      "label": "Pasir Ris East CC",
+      "lat": 1.3684683458,
+      "lng": 103.9594140684
+    },
+    {
+      "id": "pasirriseliascc",
+      "courts_count": 1,
+      "label": "Pasir Ris Elias CC",
+      "lat": 1.3783882427,
+      "lng": 103.9430392228
+    },
+    {
+      "id": "pekkiocc",
+      "courts_count": 4,
+      "label": "Pek Kio CC",
+      "lat": 1.3130511312,
+      "lng": 103.8513669613
+    },
+    {
+      "id": "potongpasircc",
+      "courts_count": 2,
+      "label": "Potong Pasir CC",
+      "lat": 1.3327462232,
+      "lng": 103.8672159753
+    },
+    {
+      "id": "queenstowncc",
+      "courts_count": 1,
+      "label": "Queenstown CC",
+      "lat": 1.2990176631,
+      "lng": 103.8013224852
+    },
+    {
+      "id": "radinmascc",
+      "courts_count": 5,
+      "label": "Radin Mas CC",
+      "lat": 1.2758716042,
+      "lng": 103.8200076434
+    },
+    {
+      "id": "sembawangcc",
+      "courts_count": 2,
+      "label": "Sembawang CC",
+      "lat": 1.4517078496,
+      "lng": 103.8288141462
+    },
+    {
+      "id": "senjacashewcc",
+      "courts_count": 7,
+      "label": "Senja-Cashew CC",
+      "lat": 1.3819604716,
+      "lng": 103.7647216739
+    },
+    {
+      "id": "siglapcc",
+      "courts_count": 5,
+      "label": "Siglap CC",
+      "lat": 1.3173220741,
+      "lng": 103.9467997607
+    },
+    {
+      "id": "tampineschangkatcc",
+      "courts_count": 2,
+      "label": "Tampines Changkat CC",
+      "lat": 1.3458133499,
+      "lng": 103.9476878279
+    },
+    {
+      "id": "tanglincc",
+      "courts_count": 2,
+      "label": "Tanglin CC",
+      "lat": 1.3231844843,
+      "lng": 103.8269143033
+    },
+    {
+      "id": "tanjongpagarcc",
+      "courts_count": 3,
+      "label": "Tanjong Pagar CC",
+      "lat": 0.0,
+      "lng": 0.0
+    },
+    {
+      "id": "senjacashewcc",
+      "courts_count": 7,
+      "label": "Senja-Cashew CC",
+      "lat": 1.3819604716,
+      "lng": 103.7647216739
+    },
+    {
+      "id": "siglapcc",
+      "courts_count": 5,
+      "label": "Siglap CC",
+      "lat": 1.3173220741,
+      "lng": 103.9467997607
+    },
+    {
+      "id": "tampineschangkatcc",
+      "courts_count": 2,
+      "label": "Tampines Changkat CC",
+      "lat": 1.3458133499,
+      "lng": 103.9476878279
+    },
+    {
+      "id": "tanglincc",
+      "courts_count": 2,
+      "label": "Tanglin CC",
+      "lat": 1.3231844843,
+      "lng": 103.8269143033
+    },
+    {
+      "id": "tanjongpagarcc",
+      "courts_count": 3,
+      "label": "Tanjong Pagar CC",
+      "lat": 0.0,
+      "lng": 0.0
+    },
+    {
+      "id": "tanjongpagarspottiswoodeparkrc",
+      "courts_count": 4,
+      "label": "Tanjong Pagar Spottiswoode Park RC",
+      "lat": 1.274427547,
+      "lng": 103.8348787847
+    },
+    {
+      "id": "teckgheecc",
+      "courts_count": 1,
+      "label": "Teck Ghee CC",
+      "lat": 1.363106014,
+      "lng": 103.8535604879
+    },
+    {
+      "id": "telokblangahcc",
+      "courts_count": 4,
+      "label": "Telok Blangah CC",
+      "lat": 1.2747682667,
+      "lng": 103.807694129
+    },
+    {
+      "id": "thefrontiercc",
+      "courts_count": 3,
+      "label": "The Frontier CC",
+      "lat": 1.3405458565,
+      "lng": 103.7045384744
+    },
+    {
+      "id": "tiongbahrucc",
+      "courts_count": 2,
+      "label": "Tiong Bahru CC",
+      "lat": 1.2834698539,
+      "lng": 103.831911815
+    },
+    {
+      "id": "whampoacc",
+      "courts_count": 3,
+      "label": "Whampoa CC",
+      "lat": 1.3247343567,
+      "lng": 103.8569419367
+    },
+    {
+      "id": "woodlandsgalaxycc",
+      "courts_count": 1,
+      "label": "Woodlands Galaxy CC",
+      "lat": 1.4387991437,
+      "lng": 103.8025186999
+    },
+    {
+      "id": "yewteecc",
+      "courts_count": 2,
+      "label": "Yew Tee CC",
+      "lat": 1.3948331221,
+      "lng": 103.7447905013
+    },
+    {
+      "id": "yuhuacc",
+      "courts_count": 2,
+      "label": "Yuhua CC",
+      "lat": 1.3399585132,
+      "lng": 103.7371158326
+    },
+    {
+      "id": "payalebarkovancc",
+      "courts_count": 2,
+      "label": "Paya Lebar Kovan CC",
+      "lat": 1.357598306,
+      "lng": 103.8863135313
+    },
+    {
+      "id": "tamanjurongcc",
+      "courts_count": 2,
+      "label": "Taman Jurong CC",
+      "lat": 1.3352778002,
+      "lng": 103.7217229631
+    },
+    {
+      "id": "marymountcc",
+      "courts_count": 3,
+      "label": "Marymount CC",
+      "lat": 1.3621389944,
+      "lng": 103.8412903111
+    },
+    {
+      "id": "chongpangcc",
+      "courts_count": 0,
+      "label": "Chong Pang CC",
+      "lat": 1.43352897,
+      "lng": 103.830148771
+    },
+    {
+      "id": "clementicc",
+      "courts_count": 0,
+      "label": "Clementi CC",
+      "lat": 1.3188151947,
+      "lng": 103.7681536821
+    },
+    {
+      "id": "neesoonsouthcc",
+      "courts_count": 0,
+      "label": "Nee Soon South CC",
+      "lat": 1.4149736771,
+      "lng": 103.8348798085
+    },
+    {
+      "id": "bukitmerahcc",
+      "courts_count": 0,
+      "label": "Bukit Merah CC",
+      "lat": "",
+      "lng": ""
+    },
+    {
+      "id": "eunoscc",
+      "courts_count": 0,
+      "label": "Eunos CC",
+      "lat": 1.3325214927,
+      "lng": 103.9152363113
+    },
+    {
+      "id": "thomsoncc",
+      "courts_count": 0,
+      "label": "Thomson CC",
+      "lat": 1.3585760046,
+      "lng": 103.8455927066
+    },
+    {
+      "id": "hougangcc",
+      "courts_count": 2,
+      "label": "Hougang CC",
+      "lat": 1.3646236981,
+      "lng": 103.8922303691
+    },
+    {
+      "id": "zhenghuacc",
+      "courts_count": 0,
+      "label": "Zhenghua CC",
+      "lat": 1.3868890014,
+      "lng": 103.771719585
+    }
+  ],
+  "total_outlets_count": 85
+}
