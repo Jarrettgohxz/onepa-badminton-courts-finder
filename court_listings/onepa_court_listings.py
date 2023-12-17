@@ -1,9 +1,9 @@
-
 import requests
 import os
 import time
 import sys
 import json
+import re
 
 
 from selenium.webdriver.support.wait import WebDriverWait
@@ -25,8 +25,9 @@ class OnePACourtListings():
     start_url = 'https://www.onepa.gov.sg/'
 
     get_catalog_outlets_url = 'https://www.onepa.gov.sg/pacesapi/catalogs/outlets'
+
     get_badminton_court_outlets_url = 'https://www.onepa.gov.sg/pacesapi/facilitysearch/searchjson?facility=BADMINTON%20COURTS&outlet=&date={date}&time={time}&page={page}&division='
-    # ?selectedFacility=TampinesEastCC_BADMINTONCOURTS&selectedDate=13/12/2023
+
     get_timeslots_url = 'https://www.onepa.gov.sg/pacesapi/facilityavailability/GetFacilitySlots?selectedFacility={outlet_id}_badmintoncourts&selectedDate={date}&time=all'
 
     def __init__(self):
@@ -178,7 +179,8 @@ class OnePACourtListings():
 
     def get_timeslots(self):
 
-        sleep_timing = 2
+        # to experiment with proxy switching to reduce pause time - allow for faster requests iterations
+        sleep_timing = 6
 
         proxies = {
             'https': 'http://brd-customer-hl_61469640-zone-isp:ovmuz8dv1i1r@brd.superproxy.io:22225'
@@ -198,6 +200,7 @@ class OnePACourtListings():
 
             for outlet in outlets:
                 try:
+
                     outlet_id = outlet['id']
                     label = outlet['label']
 
@@ -213,13 +216,11 @@ class OnePACourtListings():
                                        'Accept': 'application/json, text/plain, */*',
                                        'Content-Type': 'application/json;charset=utf-8',
                                        'Host': 'www.onepa.gov.sg',
-                                       # 'Referer': 'https://www.onepa.gov.sg',
-
-
-                                       # try to rotate the facilityId based on the previous query and send GET request to persist apprioprate cookie
                                        'Referer':  'https://www.onepa.gov.sg/facilities/availability?facilityId={outlet_id}_BADMINTONCOURTS&date={self.date}&time=all'
 
-                                   }, proxies=proxies)
+                                   }
+                                   # , proxies=proxies
+                                   )
 
                     data = json.loads(r.text)
                     response_code = int(data['responseStatusCode'])
@@ -229,8 +230,6 @@ class OnePACourtListings():
                     if resource_list == None or len(resource_list) == 0 or response_code != 200:
                         time.sleep(sleep_timing)
                         continue
-
-                    has_available_court = False
 
                     resources = []
 
@@ -253,10 +252,14 @@ class OnePACourtListings():
 
                                 slots.append(slots_data)
 
-                                if not has_available_court:
-                                    has_available_court = True
-
                         if len(slots) > 1:
+
+                            match = re.match(re.compile(
+                                r'(?:\w*)(\d)', re.I), court_number.replace(' ', ''))
+
+                            if match != None:
+                                court_number = match.group(1)
+
                             resource_data = {
                                 "court_number":  court_number,
                                 "slots": slots
@@ -271,7 +274,6 @@ class OnePACourtListings():
                             "id": outlet_id,
                             "resources": resources
                         }
-
                         available_courts.append(id_resource_data)
 
                     time.sleep(sleep_timing)
@@ -284,20 +286,25 @@ class OnePACourtListings():
                     print(r.text)
                     continue
 
-            print(json.dumps(data, indent=1))
-            print('\n\n')
+            if len(available_courts) == 0:
+                return
 
             with open('courts.json', 'r') as courts:
-                current_courts_data = json.load(courts)
+                courts_data = json.load(courts)
 
             with open('courts.json', 'w') as courts:
-                data = {
+                new_data = {
                     "date": self.date,
                     "available_courts": available_courts
                 }
-                current_courts_data['data'].append(data)
 
-                courts.write(data)
+                courts_data['data'].append(new_data)
+
+                print('\n\n++++++++++++++++++++++++++++++++\n')
+                print('**** Writing data to courts.json... ****')
+                print('\n++++++++++++++++++++++++++++++++\n\n')
+
+                json.dump(courts_data, courts)
 
         except Exception as e:
             print(e)
@@ -316,4 +323,3 @@ if __name__ == '__main__':
             onepa_court_listings.setup_venues_data_json(update=True)
 
     onepa_court_listings.get_timeslots()
-    # onepa_court_listings.test()

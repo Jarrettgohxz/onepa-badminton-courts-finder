@@ -36,13 +36,6 @@
       "lng": 103.9466206954
     },
     {
-      "id": "zhenghuacc",
-      "courts_count": 0,
-      "label": "Zhenghua CC",
-      "lat": 1.3868890014,
-      "lng": 103.771719585
-    },
-    {
       "id": "bidadaricc",
       "courts_count": 1,
       "label": "Bidadari CC",
@@ -104,41 +97,6 @@
       "label": "Bukit Batok CC",
       "lat": 1.3504592976,
       "lng": 103.7472778694
-    },
-    {
-      "id": "bukitpanjangcc",
-      "courts_count": 1,
-      "label": "Bukit Panjang CC",
-      "lat": 1.3764121854,
-      "lng": 103.7710009282
-    },
-    {
-      "id": "bukittimahcc",
-      "courts_count": 1,
-      "label": "Bukit Timah CC",
-      "lat": 1.3405868985,
-      "lng": 103.7718183804
-    },
-    {
-      "id": "buonavistacc",
-      "courts_count": 2,
-      "label": "Buona Vista CC",
-      "lat": 1.3091830331,
-      "lng": 103.7926404803
-    },
-    {
-      "id": "cairnhillcc",
-      "courts_count": 2,
-      "label": "Cairnhill CC",
-      "lat": 1.3103876746,
-      "lng": 103.8388827078
-    },
-    {
-      "id": "canberracc",
-      "courts_count": 2,
-      "label": "Canberra CC",
-      "lat": 1.445044137,
-      "lng": 103.8194737311
     },
     {
       "id": "bukitpanjangcc",
@@ -400,25 +358,11 @@
       "lng": 103.9467997607
     },
     {
-      "id": "tampineschangkatcc",
-      "courts_count": 2,
-      "label": "Tampines Changkat CC",
-      "lat": 1.3458133499,
-      "lng": 103.9476878279
-    },
-    {
       "id": "tanglincc",
       "courts_count": 2,
       "label": "Tanglin CC",
       "lat": 1.3231844843,
       "lng": 103.8269143033
-    },
-    {
-      "id": "tanjongpagarcc",
-      "courts_count": 3,
-      "label": "Tanjong Pagar CC",
-      "lat": 0.0,
-      "lng": 0.0
     },
     {
       "id": "senjacashewcc",
@@ -596,5 +540,5 @@
       "lng": 103.771719585
     }
   ],
-  "total_outlets_count": 85
+  "total_outlets_count": 77 // original: 85; as returned from API - some removed due to duplicates
 }
