@@ -83,7 +83,7 @@ class OnePACourtListings():
                 current_cookiejar=self.cookiejar, cookies=cookies)
 
         except:
-            print('error')
+            print('error in starting selenium browser...')
 
         finally:
             self.chrome_webdriver.quit()
@@ -192,6 +192,7 @@ class OnePACourtListings():
 
             # cookie_str = cookies_utils.get_cookie_str(cookiejar=self.cookiejar)
 
+            # original value for "total_outlets_count": 85; as returned from API - some removed due to duplicates
             with open('venues_data.json', 'r') as v:
                 data = json.load(v)
                 outlets = data['outlets']
@@ -306,15 +307,22 @@ class OnePACourtListings():
 
                 json.dump(courts_data, courts)
 
+        except KeyboardInterrupt:
+            print('-----------------------------------')
+            print('Exiting script...')
+            print('courts.json have not been updated.')
+            print('-----------------------------------')
+
         except Exception as e:
             print(e)
 
 
 if __name__ == '__main__':
-    # onepa_court_listings.auth_login()
     load_dotenv()
 
     onepa_court_listings = OnePACourtListings()
+
+    onepa_court_listings.auth_login()
 
     with open('config.json', 'r') as config:
         data = json.load(config)

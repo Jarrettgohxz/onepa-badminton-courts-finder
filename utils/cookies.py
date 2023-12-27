@@ -38,7 +38,7 @@ def update_cookiejar(current_cookiejar: CookieJar, cookies: List[dict]):
                 version=0,
                 name=c['name'],
                 value=c['value'],
-                port='443',
+                port=c['port'] if 'port' in c else None,
                 port_specified=False,
                 domain=c['domain'],
                 domain_specified=True,

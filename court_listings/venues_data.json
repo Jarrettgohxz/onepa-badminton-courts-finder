@@ -540,5 +540,5 @@
       "lng": 103.771719585
     }
   ],
-  "total_outlets_count": 77 // original: 85; as returned from API - some removed due to duplicates
+  "total_outlets_count": 77
 }
