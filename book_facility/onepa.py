@@ -71,17 +71,19 @@ class OnePA():
 
         return cookie_str
 
-    def set_cookiejar(self):
+    def load_cookies_into_session(self):
 
         try:
-            for c in self.chrome_webdriver.get_cookies():
+            cookies = self.chrome_webdriver.get_cookies()
+
+            for c in cookies:
                 cookie = Cookie(
                     version=0,
                     name=c['name'],
                     value=c['value'],
-                    port=None,
+                    port=c['port'] if 'port' in c else None,
                     port_specified=False,
-                    domain=c['domain'],
+                    domain='www.onepa.gov.sg',
                     domain_specified=True,
                     domain_initial_dot=False,
                     path=c['path'] if 'path' in c else None,
@@ -95,17 +97,14 @@ class OnePA():
                     rfc2109=False
                 )
 
-                self.cookiejar.set_cookie(cookie=cookie)
-
-            # artificially sleep for few seconds to prevent driver.quit() from being invoked too early
-            time.sleep(2)
+                self.s.cookies.set_cookie(cookie)
 
         except Exception as e:
             # TO HANDLE SPECIFIC ERRORS
             print(e)
 
-        finally:
-            self.chrome_webdriver.quit()
+        # finally:
+        #     self.chrome_webdriver.quit()
 
     def launch_browser(self):
         options = webdriver.ChromeOptions()
@@ -197,60 +196,61 @@ class OnePA():
         #     self.chrome_webdriver.quit()
 
     def get_cart_token(self):
-        time.sleep(6)
-        # self.s.cookies.update(self.cookiejar)
+        try:
+            time.sleep(6)
+            # self.s.cookies.update(self.cookiejar
 
-        for c in self.cookiejar:
-            self.s.cookies.set_cookie(c)
+            # self.s.get(
+            #     'https://www.onepa.gov.sg/facilities/availability?facilityId=BishanCC_BADMINTONCOURTS&date=18/12/2023&time=all')
 
-        # self.s.get(
-        #     'https://www.onepa.gov.sg/facilities/availability?facilityId=BishanCC_BADMINTONCOURTS&date=18/12/2023&time=all')
+            # requests_cookiejar = cookies_util.get_requests_cookiejar(
+            #     self.cookiejar)
 
-        # requests_cookiejar = cookies_util.get_requests_cookiejar(
-        #     self.cookiejar)
+            # self.s.cookies.update(requests_cookiejar)
 
-        # self.s.cookies.update(requests_cookiejar)
+            # print(requests_cookiejar)
 
-        # print(requests_cookiejar)
+            print('--------------------------')
 
-        print('--------------------------')
+            print('before cart token')
+            for c in self.s.cookies:
+                print(c)
+            print('\n')
 
-        print('before cart token')
-        for c in self.s.cookies:
-            print(c)
-        print('\n')
+            r = self.s.get(self.cart_token_url,
+                           #    cookies=requests_cookiejar,
+                           headers={
+                               #    'Cookie': cookie_str,
+                               'Accept': 'application/json, text/plain, */*',
+                               #    'Referer': ''
+                           }
+                           )
 
-        r = self.s.get(self.cart_token_url,
-                       #    cookies=requests_cookiejar,
-                       headers={
-                           #    'Cookie': cookie_str,
-                           'Accept': 'application/json, text/plain, */*',
-                           #    'Referer': ''
-                       }
-                       )
+            cart_token = r.text
+            self.cart_token = cart_token
 
-        cart_token = r.text
-        self.cart_token = cart_token
+            # cookie_dict = self.s.cookies.get_dict(domain='www.onepa.gov.sg')
+            # cookies = [{'name': name, 'value': value, 'domain': 'www.onepa.gov.sg'}
+            #            for (name, value) in cookie_dict.items()]
 
-        # cookie_dict = self.s.cookies.get_dict(domain='www.onepa.gov.sg')
-        # cookies = [{'name': name, 'value': value, 'domain': 'www.onepa.gov.sg'}
-        #            for (name, value) in cookie_dict.items()]
+            # print(cookie_dict)
+            # print(cookies)
 
-        # print(cookie_dict)
-        # print(cookies)
+            # cookies_util.update_cookiejar(
+            #     current_cookiejar=self.cookiejar, cookies=cookies)
 
-        # cookies_util.update_cookiejar(
-        #     current_cookiejar=self.cookiejar, cookies=cookies)
+            print('\n')
+            print('****')
+            print('after cart token')
+            for c in self.s.cookies:
+                print(c)
+            # print(self.s.cookies)
+            # print('\n')
+            # print(r.headers)
+            print('****')
 
-        print('\n')
-        print('****')
-        print('after cart token')
-        for c in self.s.cookies:
-            print(c)
-        # print(self.s.cookies)
-        # print('\n')
-        # print(r.headers)
-        print('****')
+        except Exception as e:
+            print(e)
 
     def get_facility_id(self):
 
@@ -267,10 +267,10 @@ class OnePA():
             "cartId": "",
             "userId": "",
             "facilities": [{"facilityId": "cb0a179e-d355-e911-8120-00155d004f03",
-                            "date": "18/12/2023",
-                            "slot": "06:00 PM - 07:00 PM",
-                            "slotId": "64800"}],
-            "isSomeoneElse": False
+                            "date": "03/01/2024",
+                            "slot": "10:00 AM - 11:00 AM",
+                            "slotId": "36000"}],
+            "isSomeoneElse": "false"
         }
 
         fields = {
@@ -283,7 +283,7 @@ class OnePA():
 
         m = MultipartEncoder(fields=fields, boundary=boundary)
 
-        print(str(m.to_string()))
+        # print(str(m.to_string()))
 
         # webkitformboundary = webkitformboundary_util.generate_webkitformboundary([
 
@@ -318,18 +318,26 @@ class OnePA():
         #     self.cookiejar)
         # print(requests_cookiejar)
 
+        data = '------WebKitFormBoundaryuOofGjRtCRXTdjry\nContent-Disposition: form-data; name="data"\n\n{{"cartId":"","userId":"","facilities":[{{"facilityId": "cb0a179e-d355-e911-8120-00155d004f03","date":"03/01/2024", "slot":"10:00 AM - 11:00 AM","slotId":"36000"}}],"isSomeoneElse":false}}\n------WebKitFormBoundaryuOofGjRtCRXTdjry\nContent-Disposition: form-data; name="__RequestVerificationToken"\n\n{request_verification_token} \n------WebKitFormBoundaryuOofGjRtCRXTdjry--'.format(
+            request_verification_token=request_verification_token)
+
+        print(data)
+
         r = self.s.post(self.quick_book_facility_url,
                         # cookies=requests_cookiejar,
                         headers={
                             # 'Cookie': cookie_str,
                             'Host': 'www.onepa.gov.sg',
                             'Origin': 'https://www.onepa.gov.sg',
-                            'Referer': 'https://www.onepa.gov.sg/facilities/availability?facilityId=BishanCC_BADMINTONCOURTS&date=18/12/2023&time=all',
+                            'Referer': 'https://www.onepa.gov.sg/facilities/availability?facilityId=BishanCC_BADMINTONCOURTS&date=03/01/2024&time=all',
                             'Accept': 'application/json, text/plain, */*',
-                            'Content-Length': str(m.len),
-                            'Content-Type': m.content_type,
+                            # 'Content-Length': str(m.len),
+                            # 'Content-Type': m.content_type,
+                            'Content-Length': '581',
+                            'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryuOofGjRtCRXTdjry'
                         },
-                        data=str(m.to_string())
+                        # data=str(m.to_string())
+                        data=data
                         )
 
         print('\n')
@@ -341,8 +349,6 @@ class OnePA():
 
         for c in self.s.cookies:
             print(c)
-
-        print(r.request.headers)
 
     def get_venues_list(self):
         # 1 to 10
@@ -404,7 +410,7 @@ if __name__ == "__main__":
 
     onepa.launch_browser()
     onepa.auth_login()
-    onepa.set_cookiejar()
+    onepa.load_cookies_into_session()
 
     onepa.get_cart_token()
     # onepa.get_facility_id()
