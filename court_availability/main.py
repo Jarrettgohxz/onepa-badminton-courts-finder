@@ -1,17 +1,8 @@
 import requests
-import os
 import time
 import sys
 import json
 import re
-
-
-# from http.cookiejar import CookieJar
-from dotenv import load_dotenv
-
-
-sys.path.append('../')
-from utils import cookies as cookies_utils  # NOQA
 
 
 class OnePACourtListings():
@@ -291,7 +282,6 @@ class OnePACourtListings():
 
 
 if __name__ == '__main__':
-    load_dotenv()
 
     onepa_court_listings = OnePACourtListings()
 

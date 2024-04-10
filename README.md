@@ -2,8 +2,7 @@
 
 A simple automation to find all the available Badminton courts from OnePA CCs in Singapore using Python. (https://www.onepa.gov.sg/ website). I believe that the method used in this project is faster and more efficient compared to the manual method of visiting the website and interacting with the UI elements one by one. It is also more lightweight than other general web crawling/scraping methods used (such as with Selenium, Scrapy or other popular libraries), that interacts with the UI HTML elements. This is because the court availability data are not extracted from the HTML source code, but rather from a rate-limited and non-intrusive direct API call to the relevant URL endpoints.
 
-
-# Create a Python virutal environment (In Windows)
+# Create a Python virtual environment (In Windows)
 
 ```
 $ python -m venv path/to/venv
@@ -20,17 +19,18 @@ $ /path/to/venv/scripts/activate
   "date": "DD/MM/YYYY"
 }
 ```
+
 - `update_venues_data_json`: boolean to indicate whether to make a call to the function to retrieve venues data and update the existing one (as defined in `venues_data.json`)
 
 > From within the Python virtual environment
 
-Install required packages 
+Install required packages
 
 ```
 (venv) onepa-badminton-courts-finder/court_availability$ pip install -r requirements.txt
 ```
 
-To run the script 
+To run the script
 
 ```
 (venv) onepa-badminton-courts-finder/court_availability$ python main.py
