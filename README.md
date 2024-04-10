@@ -2,11 +2,6 @@
 
 A simple automation to find all the available Badminton courts from OnePA CCs in Singapore using Python. (https://www.onepa.gov.sg/ website). I believe that the method used in this project is faster and more efficient compared to the manual method of visiting the website and interacting with the UI elements one by one. It is also more lightweight than other general web crawling/scraping methods used (such as with Selenium, Scrapy or other popular libraries), that interacts with the UI HTML elements. This is because the court availability data are not extracted from the HTML source code, but rather from a rate-limited and non-intrusive direct API call to the relevant URL endpoints.
 
-# PACKAGES
-
-Libraries used in this project
-
-- requests
 
 # Create a Python virutal environment (In Windows)
 
