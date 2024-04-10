@@ -18,8 +18,7 @@ from utils import browser as browser_utils, cookies as cookies_utils, auth as au
 
 
 class OnePACourtListings():
-
-    date = '18/12/2023'
+    date = ''
     time = ''
 
     start_url = 'https://www.onepa.gov.sg/'
@@ -179,12 +178,7 @@ class OnePACourtListings():
 
     def get_timeslots(self):
 
-        # to experiment with proxy switching to reduce pause time - allow for faster requests iterations
-        sleep_timing = 6
-
-        proxies = {
-            'https': 'http://brd-customer-hl_61469640-zone-isp:ovmuz8dv1i1r@brd.superproxy.io:22225'
-        }
+        sleep_timing = 2
 
         try:
             facilities_page_url = f'{self.start_url}/facilities'
@@ -322,12 +316,35 @@ if __name__ == '__main__':
 
     onepa_court_listings = OnePACourtListings()
 
-    onepa_court_listings.auth_login()
+    # onepa_court_listings.auth_login()
 
     with open('config.json', 'r') as config:
         data = json.load(config)
 
         if data['update_facilities_from_server']:
             onepa_court_listings.setup_venues_data_json(update=True)
+
+        date_config = data['date']
+
+        try:
+            if bool(date_config):
+                date_regex = r'\d{2}\/\d{2}\/\d{4}'
+                match = re.match(date_regex, date_config)
+
+                if match is None:
+                    sys.exit(1)
+
+                onepa_court_listings.date = data['date']
+
+            else:
+                sys.exit(1)
+
+        except SystemExit:
+            print('\n***********************************************************\n')
+            print(
+                'Please input a valid date in DD/MM/YYYY format in the config.json file.')
+            print('\n***********************************************************\n')
+
+            sys.exit()
 
     onepa_court_listings.get_timeslots()
