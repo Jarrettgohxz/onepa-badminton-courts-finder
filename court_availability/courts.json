@@ -375,6 +375,689 @@
           ]
         }
       ]
+    },
+    {
+      "date": "25/04/2024",
+      "available_courts": [
+        {
+          "id": "ayerrajahcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "3",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bukitpanjangcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "buonavistacc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "3",
+              "slots": [
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cairnhillcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "canberracc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false },
+                { "time_range": "08:30 PM - 09:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chuachukangcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "3",
+              "slots": [
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false },
+                { "time_range": "04:45 PM - 05:45 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gekpohvillecc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false },
+                { "time_range": "03:00 PM - 04:00 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false },
+                { "time_range": "03:00 PM - 04:00 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "geylangseraicc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "3",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hendersoncc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "10:00 AM - 11:00 AM", "is_peak": false },
+                { "time_range": "11:00 AM - 12:00 PM", "is_peak": false },
+                { "time_range": "12:00 PM - 01:00 PM", "is_peak": false },
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false },
+                { "time_range": "03:00 PM - 04:00 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:00 AM - 11:00 AM", "is_peak": false },
+                { "time_range": "11:00 AM - 12:00 PM", "is_peak": false },
+                { "time_range": "12:00 PM - 01:00 PM", "is_peak": false },
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false },
+                { "time_range": "03:00 PM - 04:00 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "jalanbesarcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "joochiatcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false },
+                { "time_range": "05:30 PM - 06:30 PM", "is_peak": true }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kallangcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kimsengcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "10:00 AM - 11:00 AM", "is_peak": false },
+                { "time_range": "11:00 AM - 12:00 PM", "is_peak": false },
+                { "time_range": "12:00 PM - 01:00 PM", "is_peak": false },
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false },
+                { "time_range": "03:00 PM - 04:00 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:00 AM - 11:00 AM", "is_peak": false },
+                { "time_range": "11:00 AM - 12:00 PM", "is_peak": false },
+                { "time_range": "12:00 PM - 01:00 PM", "is_peak": false },
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false },
+                { "time_range": "03:00 PM - 04:00 PM", "is_peak": false },
+                { "time_range": "04:00 PM - 05:00 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "neesooneastcc",
+          "resources": [
+            {
+              "court_number": "A",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "B",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "C",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sembawangcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false },
+                { "time_range": "05:30 PM - 06:30 PM", "is_peak": true }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false },
+                { "time_range": "05:30 PM - 06:30 PM", "is_peak": true }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "senjacashewcc",
+          "resources": [
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "3",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "4",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "5",
+              "slots": [
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "7",
+              "slots": [
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "senjacashewcc",
+          "resources": [
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "3",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "4",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "5",
+              "slots": [
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "7",
+              "slots": [
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "siglapcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false },
+                { "time_range": "08:30 PM - 09:30 PM", "is_peak": true }
+              ]
+            },
+            {
+              "court_number": "3",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tanjongpagarcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "telokblangahcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "08:30 PM - 09:30 PM", "is_peak": true }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "05:30 PM - 06:30 PM", "is_peak": true }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "whampoacc",
+          "resources": [
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:30 AM - 11:30 AM", "is_peak": false },
+                { "time_range": "11:30 AM - 12:30 PM", "is_peak": false },
+                { "time_range": "12:30 PM - 01:30 PM", "is_peak": false },
+                { "time_range": "01:30 PM - 02:30 PM", "is_peak": false },
+                { "time_range": "02:30 PM - 03:30 PM", "is_peak": false },
+                { "time_range": "03:30 PM - 04:30 PM", "is_peak": false },
+                { "time_range": "04:30 PM - 05:30 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "yewteecc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "12:00 PM - 01:00 PM", "is_peak": false },
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false },
+                { "time_range": "03:00 PM - 04:00 PM", "is_peak": false },
+                { "time_range": "04:00 PM - 05:00 PM", "is_peak": false },
+                { "time_range": "05:00 PM - 06:00 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "12:00 PM - 01:00 PM", "is_peak": false },
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false },
+                { "time_range": "03:00 PM - 04:00 PM", "is_peak": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tamanjurongcc",
+          "resources": [
+            {
+              "court_number": "1",
+              "slots": [
+                { "time_range": "10:00 AM - 11:00 AM", "is_peak": false },
+                { "time_range": "11:00 AM - 12:00 PM", "is_peak": false },
+                { "time_range": "12:00 PM - 01:00 PM", "is_peak": false },
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false },
+                { "time_range": "03:00 PM - 04:00 PM", "is_peak": false },
+                { "time_range": "04:00 PM - 05:00 PM", "is_peak": false }
+              ]
+            },
+            {
+              "court_number": "2",
+              "slots": [
+                { "time_range": "10:00 AM - 11:00 AM", "is_peak": false },
+                { "time_range": "11:00 AM - 12:00 PM", "is_peak": false },
+                { "time_range": "12:00 PM - 01:00 PM", "is_peak": false },
+                { "time_range": "01:00 PM - 02:00 PM", "is_peak": false },
+                { "time_range": "02:00 PM - 03:00 PM", "is_peak": false },
+                { "time_range": "03:00 PM - 04:00 PM", "is_peak": false },
+                { "time_range": "04:00 PM - 05:00 PM", "is_peak": false }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

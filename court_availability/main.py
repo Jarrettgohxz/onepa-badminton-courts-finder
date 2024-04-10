@@ -6,15 +6,12 @@ import json
 import re
 
 
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
-from http.cookiejar import CookieJar
+# from http.cookiejar import CookieJar
 from dotenv import load_dotenv
 
 
 sys.path.append('../')
-from utils import browser as browser_utils, cookies as cookies_utils, auth as auth_utils  # NOQA
+from utils import cookies as cookies_utils  # NOQA
 
 
 class OnePACourtListings():
@@ -30,9 +27,8 @@ class OnePACourtListings():
     get_timeslots_url = 'https://www.onepa.gov.sg/pacesapi/facilityavailability/GetFacilitySlots?selectedFacility={outlet_id}_badmintoncourts&selectedDate={date}&time=all'
 
     def __init__(self):
-        self.chrome_webdriver = None
         self.s = requests.session()
-        self.cookiejar = CookieJar()
+        # self.cookiejar = CookieJar()
 
         self.s.headers.update({
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36",
@@ -41,59 +37,40 @@ class OnePACourtListings():
         })
 
     def append_venues_data_json(self, new_outlet: dict = None, new_total_outlets_count_value: int = None):
+        #
+        # To update `venues_data.json` file
+        #
 
+        # SCHEMA:
         # {
         #     "outlets": [],
         #     "total_outlets_count": 0
         # }
 
-        with open('venues_data.json', 'r') as v:
+        filename = 'venues_data.json'
+
+        with open(filename, 'r') as v:
             data = json.load(v)
 
-            if new_outlet != None:
+            if new_outlet is not None:
                 data['outlets'].append(new_outlet)
 
-            if new_total_outlets_count_value != None:
+            if new_total_outlets_count_value is not None:
                 data['total_outlets_count'] = new_total_outlets_count_value
 
-        with open('venues_data.json', 'w') as v:
+        with open(filename, 'w') as v:
             json.dump(data, v)
 
-    def auth_login(self):
-        try:
-            self.chrome_webdriver = browser_utils.launch_browser()
-            self.chrome_webdriver.get(self.start_url)
-
-            singpass_id = os.getenv('SINGPASS_ID')
-            singpass_pwd = os.getenv('SINGPASS_PASSWORD')
-
-            auth_utils.auth_login(chrome_webdriver=self.chrome_webdriver,
-                                  singpass_id=singpass_id,
-                                  singpass_pwd=singpass_pwd)
-
-            WebDriverWait(self.chrome_webdriver, 30).until(
-                EC.url_contains(self.start_url))
-
-            time.sleep(6)
-
-            cookies = self.chrome_webdriver.get_cookies()
-
-            cookies_utils.update_cookiejar(
-                current_cookiejar=self.cookiejar, cookies=cookies)
-
-        except:
-            print('error in starting selenium browser...')
-
-        finally:
-            self.chrome_webdriver.quit()
-
     def setup_venues_data_json(self, update=False):
+        #
+        # To update `venues_data.json` file
+        #
 
         if update:
 
-            cookie_str = cookies_utils.get_cookie_str(cookiejar=self.cookiejar)
-
             n = 1
+
+            catalog_outlets = self.get_catalog_outlets()
 
             while True:
 
@@ -102,7 +79,6 @@ class OnePACourtListings():
 
                 r = self.s.get(url,
                                headers={
-                                   'Cookie': cookie_str,
                                    'Accept': 'application/json, text/javascript, */*; q=0.01',
                                    'Content-Type': 'application/json;charset=utf-8',
                                    'Host': 'www.onepa.gov.sg',
@@ -125,8 +101,6 @@ class OnePACourtListings():
                     outlet_id = result['outletId']
                     label = result['outlet']
                     courts_count = int(result['count'])
-
-                    catalog_outlets = self.get_catalog_outlets()
 
                     lat = ''
                     lng = ''
@@ -151,19 +125,20 @@ class OnePACourtListings():
 
                 n += 1
 
-                time.sleep(10)
+                time.sleep(2)
 
         else:
             # to check if there are any new facilities added
             return
 
     def get_catalog_outlets(self):
-
-        cookie_str = cookies_utils.get_cookie_str(cookiejar=self.cookiejar)
+        #
+        # To retrieve lat, lng information for each facility outlet
+        #
 
         r = self.s.get(self.get_catalog_outlets_url,
                        headers={
-                           'Cookie': cookie_str,
+                           #    'Cookie': cookie_str,
                            'Accept': 'application/json, text/plain, */*',
                            'Content-Type': 'application/json, text/plain, */*',
                            'Host': 'www.onepa.gov.sg',
@@ -177,14 +152,17 @@ class OnePACourtListings():
         return outlets
 
     def get_timeslots(self):
+        #
+        # Main function to retrieve badminton courts availability
+        #
 
-        sleep_timing = 2
+        sleep_timing = 3
 
         try:
+
+            # to update the cookies in the requests cookies session
             facilities_page_url = f'{self.start_url}/facilities'
             self.s.get(facilities_page_url)
-
-            # cookie_str = cookies_utils.get_cookie_str(cookiejar=self.cookiejar)
 
             # original value for "total_outlets_count": 85; as returned from API - some removed due to duplicates
             with open('venues_data.json', 'r') as v:
@@ -195,6 +173,11 @@ class OnePACourtListings():
 
             for outlet in outlets:
                 try:
+
+                    courts_count = outlet['courts_count']
+
+                    if int(courts_count) == 0:
+                        continue
 
                     outlet_id = outlet['id']
                     label = outlet['label']
@@ -207,14 +190,11 @@ class OnePACourtListings():
 
                     r = self.s.get(url,
                                    headers={
-                                       # 'Cookie': cookie_str,
                                        'Accept': 'application/json, text/plain, */*',
                                        'Content-Type': 'application/json;charset=utf-8',
-                                       'Host': 'www.onepa.gov.sg',
                                        'Referer':  'https://www.onepa.gov.sg/facilities/availability?facilityId={outlet_id}_BADMINTONCOURTS&date={self.date}&time=all'
 
                                    }
-                                   # , proxies=proxies
                                    )
 
                     data = json.loads(r.text)
@@ -222,7 +202,7 @@ class OnePACourtListings():
 
                     resource_list = data['response']['resourceList']
 
-                    if resource_list == None or len(resource_list) == 0 or response_code != 200:
+                    if resource_list is None or len(resource_list) == 0 or response_code != 200:
                         time.sleep(sleep_timing)
                         continue
 
@@ -252,7 +232,7 @@ class OnePACourtListings():
                             match = re.match(re.compile(
                                 r'(?:\w*)(\d)', re.I), court_number.replace(' ', ''))
 
-                            if match != None:
+                            if match is not None:
                                 court_number = match.group(1)
 
                             resource_data = {
@@ -284,22 +264,21 @@ class OnePACourtListings():
             if len(available_courts) == 0:
                 return
 
-            with open('courts.json', 'r') as courts:
-                courts_data = json.load(courts)
+            courts_json_filename = f'courts_{self.date}.json'.replace('/', '_')
 
-            with open('courts.json', 'w') as courts:
-                new_data = {
+            open(courts_json_filename, 'x')
+
+            with open(courts_json_filename, 'w') as courts:
+                data = {
                     "date": self.date,
                     "available_courts": available_courts
                 }
 
-                courts_data['data'].append(new_data)
+                print('\n\n++++++++++++++++++++++++++++++++++++++\n')
+                print(f'**** Writing data to {courts_json_filename}... ****')
+                print('\n++++++++++++++++++++++++++++++++++++++++\n\n')
 
-                print('\n\n++++++++++++++++++++++++++++++++\n')
-                print('**** Writing data to courts.json... ****')
-                print('\n++++++++++++++++++++++++++++++++\n\n')
-
-                json.dump(courts_data, courts)
+                json.dump(data, courts)
 
         except KeyboardInterrupt:
             print('-----------------------------------')
@@ -316,12 +295,10 @@ if __name__ == '__main__':
 
     onepa_court_listings = OnePACourtListings()
 
-    # onepa_court_listings.auth_login()
-
     with open('config.json', 'r') as config:
         data = json.load(config)
 
-        if data['update_facilities_from_server']:
+        if data['update_venues_data_json']:
             onepa_court_listings.setup_venues_data_json(update=True)
 
         date_config = data['date']
