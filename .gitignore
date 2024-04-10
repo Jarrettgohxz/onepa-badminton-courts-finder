@@ -1,3 +1,14 @@
 VENV
 .env
 __pycache__
+
+# cache from prvious commits
+book_facility
+test_proxy.py
+onepa_deprecated.py
+courts_data.py
+
+# api test
+venues.json
+venues2.json
+data.json
