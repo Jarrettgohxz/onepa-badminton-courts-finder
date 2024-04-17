@@ -3,6 +3,9 @@ import time
 import sys
 import json
 import re
+import os
+import subprocess
+import webbrowser
 
 
 class OnePACourtListings():
@@ -159,6 +162,7 @@ class OnePACourtListings():
             with open('venues_data.json', 'r') as v:
                 data = json.load(v)
                 outlets = data['outlets']
+                outlets = outlets[:10]
 
             available_courts = []
 
@@ -257,19 +261,35 @@ class OnePACourtListings():
 
             courts_json_filename = f'courts_{self.date}.json'.replace('/', '_')
 
-            open(courts_json_filename, 'x')
+            # open(courts_json_filename, 'x')
 
-            with open(courts_json_filename, 'w') as courts:
-                data = {
-                    "date": self.date,
-                    "available_courts": available_courts
-                }
+            # with open(courts_json_filename, 'w') as courts:
+            #     data = {
+            #         "date": self.date,
+            #         "available_courts": available_courts
+            #     }
 
-                print('\n\n++++++++++++++++++++++++++++++++++++++\n')
-                print(f'**** Writing data to {courts_json_filename}... ****')
-                print('\n++++++++++++++++++++++++++++++++++++++++\n\n')
+            #     print('\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++\n')
+            #     print(f'**** Writing data to {courts_json_filename}... ****')
+            #     print('\n+++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n')
 
-                json.dump(data, courts)
+            #     json.dump(data, courts)
+
+            #
+            #
+            #
+
+            map_path = f'file:\\\\{os.getcwd()}\\map\\map.html'
+
+            print('\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++\n')
+            print(
+                f'Starting a local HTTP server to retrieve the map data...')
+            print('\n+++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n')
+
+            subprocess.run('flask --app ./map/server --debug run', shell=True)
+
+            # webbrowser.open(
+            #     map_path, new=0, autoraise=True)
 
         except KeyboardInterrupt:
             print('-----------------------------------')
@@ -282,6 +302,10 @@ class OnePACourtListings():
 
 
 if __name__ == '__main__':
+
+    print('\n==========================================================================')
+    print('\nNOTE: This script should always be executed from the court_availability folder\n (Eg. on Windows: C:/Users/.../onepa-badminton-courts-finder/court_availability)\n')
+    print('==============================================================================\n')
 
     onepa_court_listings = OnePACourtListings()
 

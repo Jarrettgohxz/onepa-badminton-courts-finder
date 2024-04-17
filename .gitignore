@@ -2,7 +2,7 @@ VENV
 .env
 __pycache__
 
-# cache from prvious commits
+# cache from previous commits
 book_facility
 test_proxy.py
 onepa_deprecated.py
@@ -12,3 +12,8 @@ courts_data.py
 venues.json
 venues2.json
 data.json
+
+# map
+env.js
+env.*
+court_availability/experiment/map
