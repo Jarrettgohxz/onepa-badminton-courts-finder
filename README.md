@@ -5,8 +5,8 @@ A simple automation to find all the available Badminton courts from OnePA CCs in
 # Create a Python virtual environment (In Windows)
 
 ```
-$ python -m venv path/to/venv
-$ /path/to/venv/scripts/activate
+onepa-badminton-courts-finder$ python -m venv path/to/venv
+onepa-badminton-courts-finder$ /path/to/venv/scripts/activate
 ```
 
 # USAGE
@@ -31,8 +31,10 @@ Install required packages
 ```
 
 To run the script
-
+> NOTE: This script should always be executed from the `court_availability` folder
+> (Eg. on Windows: C:\Users\...\onepa-badminton-courts-finder/court_availability)
 ```
+(venv) onepa-badminton-courts-finder$ cd court_availability
 (venv) onepa-badminton-courts-finder/court_availability$ python main.py
 ```
 
@@ -61,6 +63,12 @@ Output JSON file
   ]
 }
 ```
+
+Local HTTP server & Map display
+> Once the script has complete execution, a local HTTP server would be started with `Flask`. This server is used to serve data for the map display explained below.
+> Subsequently, a map display would be opened on the default browser at the address: ``
+
+
 
 # NOTICE
 
