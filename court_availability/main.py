@@ -288,6 +288,7 @@ class OnePACourtListings():
 
         except Exception as e:
             print(e)
+            sys.exit()
 
         try:
 
@@ -320,9 +321,9 @@ class OnePACourtListings():
 
 if __name__ == '__main__':
 
-    print('\n==============================================================================')
-    print('\nNOTE: This script should always be executed from the court_availability folder\n (Eg. on Windows: C:/Users/.../onepa-badminton-courts-finder/court_availability)\n')
-    print('==============================================================================\n')
+    # print('\n==============================================================================')
+    # print('\nNOTE: This script should always be executed from the court_availability folder\n (Eg. on Windows: C:/Users/.../onepa-badminton-courts-finder/court_availability)\n')
+    # print('==============================================================================\n')
 
     onepa_court_listings = OnePACourtListings()
 
