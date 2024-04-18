@@ -36,7 +36,7 @@ Install required packages
 
 To run the script
 > NOTE: This script should always be executed from the `court_availability` folder
-> (Eg. on Windows: C:/Users/.../onepa-badminton-courts-finder/court_availability)
+> (Eg. on Windows: C:/Users/<user>/.../onepa-badminton-courts-finder/court_availability)
 ```
 (venv) onepa-badminton-courts-finder$ cd court_availability
 (venv) onepa-badminton-courts-finder/court_availability$ python main.py
@@ -69,8 +69,7 @@ Output JSON file
 ```
 
 Local HTTP server & map display
-> Once the script has complete execution, a local HTTP server would be started with `Flask`. This server is used to serve data for the map display explained below.
-> Subsequently, a map display would be opened on the default browser at the address: `C:/Users/.../onepa-badminton-courts-finder/court_availability/map/map.html`
+> Once the script has complete execution, a local HTTP server would be started with `Flask`. This server is created to serve data for the map display that would subsequently be opened on the default browser at the address: `C:/Users/<user>/.../onepa-badminton-courts-finder/court_availability/map/map.html`
 
 
 https://github.com/Jarrettgohh/onepa-badminton-courts-finder/assets/54612861/a55952b8-9e28-4f70-a17a-bc20be040b49
