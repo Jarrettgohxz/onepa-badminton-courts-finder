@@ -68,11 +68,12 @@ Output JSON file
 }
 ```
 
-Local HTTP server & Map display
+Local HTTP server & map display
 > Once the script has complete execution, a local HTTP server would be started with `Flask`. This server is used to serve data for the map display explained below.
 > Subsequently, a map display would be opened on the default browser at the address: `C:/Users/.../onepa-badminton-courts-finder/court_availability/map/map.html`
 
 
+https://github.com/Jarrettgohh/onepa-badminton-courts-finder/assets/54612861/a55952b8-9e28-4f70-a17a-bc20be040b49
 
 
 
