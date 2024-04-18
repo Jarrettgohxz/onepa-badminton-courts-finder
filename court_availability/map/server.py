@@ -4,62 +4,61 @@ import flask
 from flask import Flask
 
 
-app = Flask(__name__)
+def create_server(date: str):
 
+    app = Flask(__name__)
 
-@app.route("/", methods=['GET'])
-def display_map():
+    @app.route("/", methods=['GET'])
+    def retrieve_map_data():
 
-    date = None
+        with open('venues_data.json', 'r') as f:
+            venues_data = json.load(f)
 
-    with open('venues_data.json', 'r') as f:
-        venues_data = json.load(f)
+        location_ids = []
 
-    location_ids = []
+        with open(f'courts_{date.replace('/', '_')}.json', 'r') as f:
+            data = json.load(f)
 
-    with open('courts_25_04_2024.json', 'r') as f:
-        data = json.load(f)
+            for court in data['available_courts']:
+                id = court['id']
 
-        date = data['date']
+                location_ids.append(id)
 
-        for court in data['available_courts']:
-            id = court['id']
+        found_locations = []
 
-            location_ids.append(id)
+        for location_id in location_ids:
 
-    found_locations = []
+            location_data = {}
 
-    for location_id in location_ids:
+            venue_match = None
 
-        location_data = {}
+            for venue in venues_data['outlets']:
+                if venue['id'] == location_id:
+                    venue_match = venue
 
-        venue_match = None
+            if venue_match is None:
+                continue
 
-        for venue in venues_data['outlets']:
-            if venue['id'] == location_id:
-                venue_match = venue
+            lat_value = venue_match['lat']
+            lng_value = venue_match['lng']
 
-        if venue_match is None:
-            continue
+            if int(lat_value) == 0 or int(lng_value) == 0:
+                continue
 
-        lat_value = venue_match['lat']
-        lng_value = venue_match['lng']
+            location_data['id'] = location_id
+            location_data['label'] = venue_match['label']
+            location_data['lat'] = lat_value
+            location_data['lng'] = lng_value
 
-        if int(lat_value) == 0 or int(lng_value) == 0:
-            continue
+            found_locations.append(location_data)
 
-        location_data['id'] = location_id
-        location_data['label'] = venue_match['label']
-        location_data['lat'] = lat_value
-        location_data['lng'] = lng_value
+        response = flask.jsonify(
+            {"date": date,
+             "found_locations": found_locations
+             })
 
-        found_locations.append(location_data)
+        response.headers.add('Access-Control-Allow-Origin', '*')
 
-    response = flask.jsonify(
-        {"date": date,
-         "found_locations": found_locations
-         })
+        return response
 
-    response.headers.add('Access-Control-Allow-Origin', '*')
-
-    return response
+    return app

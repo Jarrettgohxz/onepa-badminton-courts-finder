@@ -14,8 +14,8 @@ const retrieveData = async () => {
 
   const map = new mapboxgl.Map({
     container: "map",
-    center: [103.8185, 1.4491],
-    zoom: 12,
+    center: [103.8198, 1.3521],
+    zoom: 10,
     style: "mapbox://styles/mapbox/navigation-night-v1",
   });
 

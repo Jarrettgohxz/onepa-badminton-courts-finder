@@ -4,6 +4,7 @@ import sys
 import json
 import re
 import os
+import shlex
 import subprocess
 import webbrowser
 
@@ -162,7 +163,6 @@ class OnePACourtListings():
             with open('venues_data.json', 'r') as v:
                 data = json.load(v)
                 outlets = data['outlets']
-                outlets = outlets[:10]
 
             available_courts = []
 
@@ -171,17 +171,21 @@ class OnePACourtListings():
 
                     courts_count = outlet['courts_count']
 
-                    if int(courts_count) == 0:
-                        continue
-
-                    outlet_id = outlet['id']
                     label = outlet['label']
-
-                    url = self.get_timeslots_url.format(
-                        outlet_id=outlet_id, date=self.date)
 
                     print('-----------------------------------')
                     print(f'Querying courts at {label}...')
+
+                    if int(courts_count) == 0:
+                        print(
+                            'Facility currently not available for booking, skipping...')
+
+                        continue
+
+                    outlet_id = outlet['id']
+
+                    url = self.get_timeslots_url.format(
+                        outlet_id=outlet_id, date=self.date)
 
                     r = self.s.get(url,
                                    headers={
@@ -261,49 +265,62 @@ class OnePACourtListings():
 
             courts_json_filename = f'courts_{self.date}.json'.replace('/', '_')
 
-            # open(courts_json_filename, 'x')
+            open(courts_json_filename, 'x')
 
-            # with open(courts_json_filename, 'w') as courts:
-            #     data = {
-            #         "date": self.date,
-            #         "available_courts": available_courts
-            #     }
+            with open(courts_json_filename, 'w') as courts:
+                data = {
+                    "date": self.date,
+                    "available_courts": available_courts
+                }
 
-            #     print('\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++\n')
-            #     print(f'**** Writing data to {courts_json_filename}... ****')
-            #     print('\n+++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n')
+                print('\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++\n')
+                print(
+                    f'* Writing data to {courts_json_filename}...')
 
-            #     json.dump(data, courts)
-
-            #
-            #
-            #
-
-            map_path = f'file:\\\\{os.getcwd()}\\map\\map.html'
-
-            print('\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++\n')
-            print(
-                f'Starting a local HTTP server to retrieve the map data...')
-            print('\n+++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n')
-
-            subprocess.run('flask --app ./map/server --debug run', shell=True)
-
-            # webbrowser.open(
-            #     map_path, new=0, autoraise=True)
+                json.dump(data, courts)
 
         except KeyboardInterrupt:
-            print('-----------------------------------')
+            print('\n\n-----------------------------------')
             print('Exiting script...')
             print('courts.json have not been updated.')
             print('-----------------------------------')
+            sys.exit()
 
         except Exception as e:
             print(e)
 
+        try:
+
+            map_path = f'file:\\\\{os.getcwd()}\\map\\map.html'
+            command = f'flask --app "map/server:create_server(\'{self.date}\')" --debug run'
+
+            print(
+                f'* Starting a local HTTP server to retrieve the map data:\n')
+            print(f'$ {command}')
+            print('\n+++++++++++++++++++++++++++++++++++++++++++++++++++++\n')
+
+            args = shlex.split(command)
+
+            proc = subprocess.Popen(args)
+
+            webbrowser.open(
+                map_path, new=0, autoraise=True)
+
+            #
+            # Waits for flask server to terminate, rather than closing automatically when this script ends
+            #
+            proc.wait()
+
+        except KeyboardInterrupt:
+            print('\n\n-----------------------------------\n')
+            print('Exiting script...\n')
+            print('-----------------------------------\n')
+            sys.exit()
+
 
 if __name__ == '__main__':
 
-    print('\n==========================================================================')
+    print('\n==============================================================================')
     print('\nNOTE: This script should always be executed from the court_availability folder\n (Eg. on Windows: C:/Users/.../onepa-badminton-courts-finder/court_availability)\n')
     print('==============================================================================\n')
 
