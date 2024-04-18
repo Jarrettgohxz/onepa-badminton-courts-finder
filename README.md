@@ -2,6 +2,10 @@
 
 A simple automation to find all the available Badminton courts from OnePA CCs in Singapore using Python. (https://www.onepa.gov.sg/ website). I believe that the method used in this project is faster and more efficient compared to the manual method of visiting the website and interacting with the UI elements one by one. It is also more lightweight than other general web crawling/scraping methods used (such as with Selenium, Scrapy or other popular libraries), that interacts with the UI HTML elements. This is because the court availability data are not extracted from the HTML source code, but rather from a rate-limited and non-intrusive direct API call to the relevant URL endpoints.
 
+# Operating system
+- This script has only been tested and working on the Windows operating system
+
+
 # Create a Python virtual environment (In Windows)
 
 ```
@@ -32,7 +36,7 @@ Install required packages
 
 To run the script
 > NOTE: This script should always be executed from the `court_availability` folder
-> (Eg. on Windows: C:\Users\...\onepa-badminton-courts-finder/court_availability)
+> (Eg. on Windows: C:/Users/.../onepa-badminton-courts-finder/court_availability)
 ```
 (venv) onepa-badminton-courts-finder$ cd court_availability
 (venv) onepa-badminton-courts-finder/court_availability$ python main.py
@@ -66,7 +70,9 @@ Output JSON file
 
 Local HTTP server & Map display
 > Once the script has complete execution, a local HTTP server would be started with `Flask`. This server is used to serve data for the map display explained below.
-> Subsequently, a map display would be opened on the default browser at the address: ``
+> Subsequently, a map display would be opened on the default browser at the address: `C:/Users/.../onepa-badminton-courts-finder/court_availability/map/map.html`
+
+
 
 
 
