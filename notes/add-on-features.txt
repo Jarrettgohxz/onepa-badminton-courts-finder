@@ -1,0 +1,11 @@
+##############
+COURT AVAILABILITY
+##############
+
+1. Filter facilities - to prevent running script against all facilities, which takes a long time 
+-> config.json: provide a list of facilities to run against
+
+2. Filter range of timings to search
+
+3. Search from a range of dates
+-> store retrieved data individually in a new .json file
