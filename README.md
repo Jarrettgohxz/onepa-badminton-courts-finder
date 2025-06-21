@@ -1,5 +1,5 @@
-**DEPRECATED**
-- refer to the new project at https://github.com/Jarrettgohxz/badminton-courts-finder-sg.
+#**DEPRECATED**
+- Refer to the new project at https://github.com/Jarrettgohxz/badminton-courts-finder-sg.
 
 
 # onepa-badminton-courts-finder
