@@ -1,4 +1,4 @@
-#**DEPRECATED**
+#DEPRECATED
 - Refer to the new project at https://github.com/Jarrettgohxz/badminton-courts-finder-sg.
 
 
